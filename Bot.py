@@ -153,4 +153,6 @@ async def reroll(ctx, channel : discord.TextChannel, id_ : int):
 
     await channel.send(f"Congratulations! The new winner is {winner.mention}.!")
 
-client.run(TOKEN)
+if __name__ == "__main__":
+    bot.run(TOKEN)
+
