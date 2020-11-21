@@ -5,6 +5,8 @@ import asyncio
 import random
 from discord.ext import commands
 
+TOKEN = os.getenv("TOKEN")
+
 client = commands.Bot(command_prefix = ':')
 
 @client.event
