@@ -154,10 +154,6 @@ async def reroll(ctx, channel : discord.TextChannel, id_ : int):
     await channel.send(f"Congratulations! The new winner is {winner.mention}.!")
 
 @client.command()
-async def reroll(ctx, winner="<@771986238419894273>"):
-    channel.send(f"congrats {winner.mention} you won!")
-
-@client.command()
 @commands.has_any_role("clear perms", "Admin")
 async def clear(ctx, amount=5):
     await ctx.channel.purge(limit=amount)
