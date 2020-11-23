@@ -63,4 +63,5 @@ async def on_ready():
     print(f'Successfully logged in and booted...!')
 
 
-bot.run('TOKEN', bot=True, reconnect=True)
+if __name__ == "__main__":
+    bot.run('TOKEN', bot=True, reconnect=True)
