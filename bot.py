@@ -154,7 +154,7 @@ async def kick(context, member: discord.Member):
 async def ban(context, member: discord.Member):
      
     await member.ban()
-    await context.send('User ' + member.display_name + ' has been kicked')
+    await context.send('User ' + member.display_name + ' has been banned')
 
 
 
