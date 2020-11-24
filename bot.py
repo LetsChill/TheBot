@@ -149,6 +149,14 @@ async def kick(context, member: discord.Member):
     await member.kick()
     await context.send('User ' + member.display_name + ' has been kicked')
 
+@client.command()
+@commands.has_permissions(ban_members=True)
+async def ban(context, member: discord.Member):
+     
+    await member.ban()
+    await context.send('User ' + member.display_name + ' has been kicked')
+
+
 
 if __name__ == "__main__":
     client.run(TOKEN)
