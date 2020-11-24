@@ -28,12 +28,24 @@ async def on_message_edit(before, after):
         ) 
     embed.set_author(name=f'{before.author.name}#{before.author.discriminator}', icon_url=before.author.avatar_url)
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
-    embed.add_field(name=f'User: {before.author.mention} ', value='.', inline=False)
+    embed.add_field(name=f'User: ', value=f'{before.author.mention', inline=False)
     embed.add_field(name='Before:', value=before.content, inline=False)
     embed.add_field(name="After:", value=after.content, inline=False)
     channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
  
+@client.event
+async def on_member_join(member):
+    embed = discord.Embed(
+         time.stamp=member.joined_at,
+         colour = discord.colour(0x00FF00)
+         )
+    embed.set_author(name=f'{member.author.name}#{member.author.discriminator}', icon_url=member.avatar_url}')
+    embed.add_field(name='member joined', value=f'{member.mention} ID: {member.Id}')
+    channel = client.get_channel(780760725299396629)
+    await channel.send(embed=embed)
+
+
 @client.command()
 @commands.has_role("Giveaways")
 async def gstart(ctx, mins : int, * , prize: str):
