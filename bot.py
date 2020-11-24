@@ -156,12 +156,6 @@ async def ban(context, member: discord.Member):
     await member.ban()
     await context.send('User ' + member.mention + ' has been banned')
 
-@client.event()
-async def on_member_join(member):
-    channel_send(f"Welcome {member.mention} to our server!)
-
-
-
 if __name__ == "__main__":
     client.run(TOKEN)
 
