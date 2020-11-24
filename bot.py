@@ -18,7 +18,7 @@ async def on_ready():
 async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Game('Servers :help'))
 
-@bot.event
+@client.event
 async def on_message_edit(before, after):
     embed = discord.Embed(
         timestamp=after.created_at,
@@ -29,7 +29,7 @@ async def on_message_edit(before, after):
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
     embed.add_field(name='Before:', value=before.content, inline=False)
     embed.add_field(name="After:", value=after.content, inline=False)
-    channel = bot.get_channel(780760893125689364)
+    channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
 
 @client.command()
