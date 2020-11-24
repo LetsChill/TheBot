@@ -38,7 +38,7 @@ async def on_member_join(member):
     channel = client.get_channel(780760725299396629)
     embed = discord.Embed(
         timestamp=after.created_at,
-        description = f'{member.mention} has joined",
+        description = f"{member.mention} has joined",
         colour = discord.Colour(0x00FF00)
         ) 
     embed.set_author(name=f'{before.author.name}#{before.author.discriminator}', icon_url=before.author.avatar_url)
