@@ -142,6 +142,14 @@ async def giveaway(ctx):
 async def clear(ctx, amount=5):
     await ctx.channel.purge(limit=amount)
 
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def kick(context, member, discord.Member):
+     
+    await member.kick()
+    await context.send('User ' + member.display_name + ' has been kicked')
+
+
 if __name__ == "__main__":
     client.run(TOKEN)
 
