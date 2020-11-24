@@ -147,14 +147,14 @@ async def clear(ctx, amount=5):
 async def kick(context, member: discord.Member):
      
     await member.kick()
-    await context.send('User ' + member.display_name + ' has been kicked')
+    await context.send('User ' + member.mention + ' has been kicked')
 
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(context, member: discord.Member):
      
     await member.ban()
-    await context.send('User ' + member.display_name + ' has been banned')
+    await context.send('User ' + member.mention + ' has been banned')
 
 
 
