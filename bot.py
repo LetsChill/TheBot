@@ -40,7 +40,7 @@ async def on_member_join(member):
          time.stamp=member.created_at,
          colour = discord.Colour(0x00FF00)
          )
-    embed.set_author(name=f'{member.author.name} {member.author.discriminator}', icon_url=member.avatar_url}')
+    embed.set_author(name=f'{member.author.name} {member.author.discriminator}', {icon_url=member.avatar_url}')
     embed.add_field(name='member joined', value=f'{member.mention} ID: {member.Id}')
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embed)
