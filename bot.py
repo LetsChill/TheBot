@@ -33,18 +33,6 @@ async def on_message_edit(before, after):
     channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
  
-@client.event
-async def on_member_join(member):
-    channel = client.get_channel(780760725299396629)
-    embed = discord.Embed(
-        timestamp=member.joined_at,
-        description = f"{member.mention} has joined",
-        colour = discord.Colour(0x00FF00)
-        ) 
-    embed.set_author(name=f'{member.author.name}#{member.author.discriminator}', icon_url=member.author.avatar_url)
-    embed.set_footer(text=f"Author ID:{member.author.id}")
-    await channel.send(embed=embed)
-
 @client.command()
 @commands.has_role("Giveaways")
 async def gstart(ctx, mins : int, * , prize: str):
