@@ -18,6 +18,20 @@ async def on_ready():
 async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Game('Servers :help'))
 
+@bot.event
+async def on_message_edit(before, after):
+    embed = discord.Embed(
+        timestamp=after.created_at,
+        description = f"<@!{before.author.id}>**'s message was edited in** <#{before.channel.id}>.",
+        colour = discord.Colour(0x00FF00)
+        ) 
+    embed.set_author(name=f'{before.author.name}#{before.author.discriminator}', icon_url=before.author.avatar_url)
+    embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
+    embed.add_field(name='Before:', value=before.content, inline=False)
+    embed.add_field(name="After:", value=after.content, inline=False)
+    channel = bot.get_channel(780760893125689364)
+    await channel.send(embed=embed)
+
 @client.command()
 @commands.has_role("Giveaways")
 async def gstart(ctx, mins : int, * , prize: str):
