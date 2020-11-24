@@ -36,7 +36,13 @@ async def on_message_edit(before, after):
 @client.event
 async def on_member_join(member):
     channel = client.get_channel(780760725299396629)
-    embed = discord.Embed(description = f"Welcome {member.mention}", color=0xE74C3C)
+    embed = discord.Embed(
+        timestamp=after.created_at,
+        description = f'{member.mention} has joined",
+        colour = discord.Colour(0x00FF00)
+        ) 
+    embed.set_author(name=f'{before.author.name}#{before.author.discriminator}', icon_url=before.author.avatar_url)
+    embed.set_footer(text=f"Author ID:{before.author.id}")
     await channel.send(embed=embed)
 
 @client.command()
