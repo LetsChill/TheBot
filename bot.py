@@ -32,12 +32,12 @@ async def on_message_edit(before, after):
     embed.add_field(name="After:", value=after.content, inline=False)
     channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
+ 
 
-@client.event
-async def on_member_join(self, member):
-    ment = member.mention
-    await self.client.get_channel(780760725299396629).send(f"{ment} has joined the server.")
-    print(f"{member} has joined the server.")
+async def on_member_join(member):
+    channel = bot.get_channel(780760725299396629)
+    embed = discord.Embed(description = f"Welcome {member.mention}", color=0xE74C3C)
+    await channel.send(embed=embed)
 
 @client.command()
 @commands.has_role("Giveaways")
