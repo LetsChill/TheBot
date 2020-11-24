@@ -33,7 +33,7 @@ async def on_message_edit(before, after):
     channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
  
-
+@client.event
 async def on_member_join(member):
     channel = bot.get_channel(780760725299396629)
     embed = discord.Embed(description = f"Welcome {member.mention}", color=0xE74C3C)
