@@ -58,7 +58,7 @@ async def on_member_remove(member):
 
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
-async def clear(ctx, amount=5):asyncio
+async def clear(ctx, amount=5):
     await ctx.channel.purge(limit=amount)
 
 @client.command()
