@@ -63,7 +63,7 @@ async def on_message_delete(member, message):
     dlembed.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
     dlembed.add_field(name="User: ", value=f"{member.mention}", inline=False)
     dlembed.add_field(name="Message: ", value=message.content, inline=True)
-    channel=client.get_channel(780760893125689364)
+    channel = client.get_channel(780760893125689364)
     await channel.send(embed=dlembed)
 
 #--------------------------------Members logs----------------------------------
@@ -92,7 +92,7 @@ async def kick(context, member: discord.Member):
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(context, member: discord.Member):
-channel=client.get_channel(780760958242652160)
+channel = client.get_channel(780760958242652160)
     await member.ban()
     await context.send('User ' + member.mention + ' has been banned')
 
