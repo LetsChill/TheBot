@@ -54,18 +54,6 @@ async def on_member_remove(member):
     embmsg1.add_field(name='User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
-      
-@client.event
-async def on_message_delete(message):
-    dlembed = discord.Embed(
-        title="User message deleted:", description="{}".format(message.member.name
-        )
-    dlembed.set_author(name="WonderBot", icon_url='')
-    dlembed.add_field(name="User: ", value=f"{message.mention}", inline=False)
-    dlembed.add_field(name="Message: ", value=message.content, inline=True)
-    channel = client.get_channel(780760893125689364)
-    await channel.send(embed=dlembed)
-
 #--------------------------------Members logs----------------------------------
 
 @client.command()
