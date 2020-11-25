@@ -57,7 +57,7 @@ async def on_member_remove(member):
       
 @client.event()
 async def on_message_delete(member, message):
-    dlembed = embed=discord.Embed(
+    dlembed = discord.Embed(
         title="User message deleted:", description="User: {member.mention}"
         )
     dlembed.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
