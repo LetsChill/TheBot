@@ -92,7 +92,7 @@ async def kick(context, member: discord.Member):
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(context, member: discord.Member):
-channel = client.get_channel(780760958242652160)
+    channel = client.get_channel(780760958242652160)
     await member.ban()
     await context.send('User ' + member.mention + ' has been banned')
 
