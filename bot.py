@@ -35,6 +35,17 @@ async def on_message_edit(before, after):
     channel = client.get_channel(780760893125689364)
     await channel.send(embed=embed)
 
+@client.event
+async def on_member_join(member):
+    emb = discord.Embed(
+        time.stamp=member.created_at,
+        color = discord.Colour(0x00FF00)
+        )
+    embed.set_author(name=f"{member.author.name} {member.author.discriminator}", icon_url=member.avatar_url)
+    embed.add_field(name="member joined", value=f"{member.mention} ID: {member.Id")
+    chat = client.get_channel(780760725299396629)
+    await chat.send(emb=embed)
+
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
 async def clear(ctx, amount=5):
