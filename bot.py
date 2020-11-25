@@ -26,7 +26,7 @@ async def on_message_edit(before, after):
         description = "message was edited",
         colour = discord.Colour(0x00FF00)
         ) 
-    embed.set_author(name=f'{before.author.name}#{before.author.discriminator}', icon_url=before.author.avatar_url)
+    embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
     embed.add_field(name=f'User: ', value=f'{before.author.mention', inline=False)
     embed.add_field(name='Before:', value=before.content, inline=False)
