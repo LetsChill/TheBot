@@ -25,7 +25,7 @@ async def on_message_edit(before, after):
     embed = discord.Embed(
         timestamp=after.created_at,
         description = "message was edited",
-        colour = discord.Colour(0x00FF00)
+        colour = discord.Colour(CB41AC)
         ) 
     embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
@@ -39,7 +39,7 @@ async def on_message_edit(before, after):
 async def on_member_join(member):
     emb = discord.Embed(
         timestamp=member.created_at,
-        color = discord.Colour(0x00FF00)
+        color = discord.Colour(CB41AC)
         )
     emb.set_author(name=f"{member.author.name} {member.author.discriminator}", icon_url=member.avatar_url)
     emb.add_field(name="member joined", value=f"{member.mention} ID: {member.Id}")
