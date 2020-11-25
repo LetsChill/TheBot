@@ -38,7 +38,7 @@ async def on_message_edit(before, after):
 @client.event
 async def on_member_join(member):
     emb = discord.Embed(
-        time.stamp=member.created_at,
+        timestamp=member.created_at,
         color = discord.Colour(0x00FF00)
         )
     embed.set_author(name=f"{member.author.name} {member.author.discriminator}", icon_url=member.avatar_url)
