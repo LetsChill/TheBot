@@ -40,7 +40,7 @@ async def on_member_join(member):
     embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
-    embmsg.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    embmsg.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
     embmsg.add_field(name='User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg)
@@ -50,7 +50,7 @@ async def on_member_remove(member):
     embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
-    embmsg1.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    embmsg1.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
     embmsg1.add_field(name='User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
@@ -60,7 +60,7 @@ async def on_message_delete(message):
     dlembed = discord.Embed(
         title="User message deleted:", description="{}".format(message.member.name
         )
-    dlembed.set_author(name="WonderBot", icon_url='https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128')
+    dlembed.set_author(name="WonderBot", icon_url='https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ')
     dlembed.add_field(name="User: ", value=f"{message.mention}", inline=False)
     dlembed.add_field(name="Message: ", value=message.content, inline=True)
     channel = client.get_channel(780760893125689364)
@@ -79,7 +79,7 @@ async def kick(context, member: discord.Member):
     kickembed = discord.Embed(
       title='User kicked:', color=0x982abc
         )
-    kickembed.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    kickembed.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
     kickembed.add_field(name='User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
     channel = client.get_channel(780760958242652160)
       
