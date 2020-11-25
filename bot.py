@@ -19,6 +19,22 @@ async def on_ready():
 async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Game('Servers :help'))
  
+
+@client.event
+async def on_message_edit(before, after):
+    embed = discord.Embed(
+        timestamp=after.created_at,
+        description = "message was edited",
+        colour = discord.Colour(0x00FF00)
+        ) 
+    embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
+    embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
+    embed.add_field(name=f'User: ', value=f'{before.author.mention', inline=False)
+    embed.add_field(name='Before:', value=before.content, inline=False)
+    embed.add_field(name="After:", value=after.content, inline=False)
+    channel = client.get_channel(780760893125689364)
+    await channel.send(embed=embed)
+
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
 async def clear(ctx, amount=5):
