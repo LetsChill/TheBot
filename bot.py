@@ -45,6 +45,17 @@ async def on_member_join(member):
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg)
 
+@client.event
+async def on_member_leave(member):
+    embmsg1 = discord.Embed(
+        title='User left:', color=0x982abc
+        )
+    embmsg1.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    embmsg1.add_field(name='User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
+    channel = client.get_channel(780760725299396629)
+    await channel.send(embed=embmsg1)
+
+
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
 async def clear(ctx, amount=5):
