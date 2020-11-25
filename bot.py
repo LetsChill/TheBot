@@ -36,7 +36,7 @@ async def on_message_edit(before, after):
     await channel.send(embed=embed)
 
 @client.event
-Async def on_member_join(member)
+async def on_member_join(member)
     embed=discord.Embed(title=User joined:, color=0x982abc)
         embed.set_author(name=WonderBot,icon_url=https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128)
         embed.add_field(name=User:, value=f'{member.mention} (ID: {member.id}', inline=False)
