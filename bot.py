@@ -55,7 +55,7 @@ async def on_member_remove(member):
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
       
-@client.event()
+@client.event
 async def on_message_delete(message):
     dlembed = discord.Embed(
         title="User message deleted:", description="User: {message.mention}"
