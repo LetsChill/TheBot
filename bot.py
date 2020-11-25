@@ -19,7 +19,7 @@ async def on_ready():
 async def on_ready():
   await client.change_presence(status=discord.Status.idle, activity=discord.Game('Servers :help'))
  
-
+#--------------------------------Members logs----------------------------------
 @client.event
 async def on_message_edit(before, after):
     embed = discord.Embed(
@@ -55,6 +55,7 @@ async def on_member_remove(member):
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
 
+#--------------------------------Members logs----------------------------------
 
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
@@ -75,5 +76,7 @@ async def ban(context, member: discord.Member):
     await member.ban()
     await context.send('User ' + member.mention + ' has been banned')
 
+#--------------------------------Moderation commands----------------------------------
+
 if __name__ == "__main__":
-    client.run(TOKEN)
+    client.run(TOKEN)l look o
