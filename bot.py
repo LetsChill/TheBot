@@ -25,7 +25,7 @@ async def on_message_edit(before, after):
     embed = discord.Embed(
         timestamp=after.created_at,
         description = "message was edited",
-        colour = discord.Colour(CB41AC)
+        colour = discord.Colour(0x982abc)
         ) 
     embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
@@ -36,15 +36,12 @@ async def on_message_edit(before, after):
     await channel.send(embed=embed)
 
 @client.event
-async def on_member_join(member):
-    emb = discord.Embed(
-        timestamp=member.created_at,
-        color = discord.Colour(CB41AC)
-        )
-    emb.set_author(name=f"{member.author.name} {member.author.discriminator}", icon_url=member.avatar_url)
-    emb.add_field(name="member joined", value=f"{member.mention} ID: {member.Id}")
-    chat = client.get_channel(780760725299396629)
-    await chat.send(emb=embed)
+Async def on_member_join(member)
+    embed=discord.Embed(title=User joined:, color=0x982abc)
+        embed.set_author(name=WonderBot,icon_url=https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128)
+        embed.add_field(name=User:, value={member.mention} (ID: {member.Id}, inline=False)
+        channel = client.get_channel(780760725299396629)
+await channel.send(embed=embed)
 
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
