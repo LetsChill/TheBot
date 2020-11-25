@@ -70,15 +70,15 @@ async def on_message_delete(message):
 
 @client.command()
 @commands.has_any_role("clear perms", "Admin")
-async def clear(ctx, amount=5):
+async def clear(ctx, amount=5):asyncio
     await ctx.channel.purge(limit=amount)
 
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(context, member: discord.Member):
     kickembed = discord.Embed(
-      title='User kicked:', color=0x982abc
-        )
+    title='User kicked:', color=0x982abc
+    )
     kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
     kickembed.add_field(name='User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
     channel = client.get_channel(780760958242652160)
