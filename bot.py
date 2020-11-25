@@ -46,7 +46,7 @@ async def on_member_join(member):
     await channel.send(embed=embmsg)
 
 @client.event
-async def on_member_leave(member):
+async def on_member_remove(member):
     embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
