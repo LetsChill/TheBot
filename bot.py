@@ -76,14 +76,22 @@ async def clear(ctx, amount=5):
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(context, member: discord.Member):
-     
+embed =  title='User kicked:', color=0x982abc
+        )
+    embmsg1.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    embmsg1.add_field(name='User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
+    channel = client.get_channel(780760958242652160)
+      
     await member.kick()
+
     await context.send('User ' + member.mention + ' has been kicked')
+    await channel.send(embed=embed)
+
 
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(context, member: discord.Member):
-     
+channel=client.get_channel(780760958242652160)
     await member.ban()
     await context.send('User ' + member.mention + ' has been banned')
 
