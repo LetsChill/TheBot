@@ -38,7 +38,7 @@ async def on_message_edit(before, after):
 @client.event
 async def on_member_join(member):
     embmsg=discord.Embed(title='User joined:', color=0x982abc)
-        embmsg.set_author(name='WonderBot', icon_url='https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128')
+embed.set_author(name="WonderBot",, icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
         embmsg.add_field(name=User:, value=f'{member.mention} (ID: {member.id}', inline=False)
         channel = client.get_channel(780760725299396629)
 await channel.send(embmsg=embed)
@@ -64,4 +64,3 @@ async def ban(context, member: discord.Member):
 
 if __name__ == "__main__":
     client.run(TOKEN)
-
