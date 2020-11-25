@@ -55,6 +55,15 @@ async def on_member_remove(member):
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
 
+@client.event()
+async def on_message_delete(message):
+    embed=discord.Embed(title="{} deleted a message".format(message.member.name), 
+    description="", color="Blue")
+    embed.add_field(name= message.content ,value="Message Deleted", 
+    inline=True)
+    channel=client.get_channel(channel_id)
+await channel.send(channel, embed=embed)
+
 #--------------------------------Members logs----------------------------------
 
 @client.command()
@@ -79,4 +88,4 @@ async def ban(context, member: discord.Member):
 #--------------------------------Moderation commands----------------------------------
 
 if __name__ == "__main__":
-    client.run(TOKEN)l look o
+    client.run(TOKEN)
