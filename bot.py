@@ -60,7 +60,7 @@ async def on_message_delete(message):
     dlembed = discord.Embed(
         title="User message deleted:", description="{}".format(message.member.name
         )
-    dlembed.set_author(name="WonderBot", icon_url="https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128")
+    dlembed.set_author(name="WonderBot", icon_url='https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128')
     dlembed.add_field(name="User: ", value=f"{message.mention}", inline=False)
     dlembed.add_field(name="Message: ", value=message.content, inline=True)
     channel = client.get_channel(780760893125689364)
