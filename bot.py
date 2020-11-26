@@ -9,8 +9,9 @@ from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents().all()
+client = commands.AutoShardedBot(command_prefix=":", intents=intents)
 
-client = commands.Bot(command_prefix = ':', intents=intents)
+
 
 music = DiscordUtils.Music()
 
