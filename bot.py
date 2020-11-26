@@ -23,7 +23,7 @@ async def on_ready():
 @client.event
 async def on_ready():
     await  client.change_presence(activity=discord.Activity 
-    (type=discord.ActivityType.watching name="Emilia suffer"))
+    (type=discord.ActivityType.watching.name="Emilia suffer"))
 
 #--------------------------------Members logs----------------------------------
 @client.event
