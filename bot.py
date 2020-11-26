@@ -88,8 +88,8 @@ async def ban(context, member: discord.Member):
     banembed = discord.Embed(
     title='User banned:', color=0x982abc
     )
-    kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
-    kickembed.add_field(name=' ', value=f'User: {member.mention} (ID: {member.id}) ', inline=False)
+    banembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
+    banembed.add_field(name=' ', value=f'User: {member.mention} (ID: {member.id}) ', inline=False)
     channel = client.get_channel(780760958242652160)
     
     await member.ban()
