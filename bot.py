@@ -46,7 +46,7 @@ async def on_member_join(member):
         title='User joined:', color=0x982abc
         )
     embmsg.set_author(name="WonderBot")
-    embmsg.add_field(name='fUser: {member.mention} ', value=f'(ID: {member.id})', inline=False)
+    embmsg.add_field(name='User: ', value=f'{member.mention}(ID: {member.id})', inline=False)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg)
 
@@ -56,7 +56,7 @@ async def on_member_remove(member):
         title='User left:', color=0x982abc
         )
     embmsg1.set_author(name="WonderBot")
-    embmsg1.add_field(name=f'User: {member.mention}', value=f'(ID: {member.id})', inline=False)
+    embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg1)
 #--------------------------------Members logs----------------------------------
@@ -73,7 +73,7 @@ async def kick(context, member: discord.Member):
     title='User kicked:', color=0x982abc
     )
     kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
-    kickembed.add_field(name=f'User: {member.mention}', value=f'(ID: {member.id}) ', inline=False)
+    kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
     channel = client.get_channel(780760958242652160)
       
     await member.kick()
@@ -89,7 +89,7 @@ async def ban(context, member: discord.Member):
     title='User banned:', color=0x982abc
     )
     banembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
-    banembed.add_field(name=f'User: {member.mention}', value=f'(ID: {member.id}) ', inline=False)
+    banembed.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
     channel = client.get_channel(780760958242652160)
     
     await member.ban()
