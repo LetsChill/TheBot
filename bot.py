@@ -133,7 +133,7 @@ async def play(ctx, *, query):
     voice = get(bot.voice_clients, guild=ctx.guild)
 
     await join(ctx, voice)
-    await ctx.send(f'Now playing {info['title']}.')
+    await ctx.send(f'Now playing.')
 
     voice.play(FFmpegPCMAudio(source, **FFMPEG_OPTS), after=lambda e: print('done', e))
     voice.is_playing()
