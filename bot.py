@@ -37,8 +37,7 @@ async def on_ready():
 async def on_message_edit(before, after):
     embed = discord.Embed(
         timestamp=after.created_at,
-        description = "message was edited",
-        colour = discord.Colour(0x982abc)
+        description = "message was edited", colour=0x982abc
         ) 
     embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
     embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
@@ -52,8 +51,7 @@ async def on_message_edit(before, after):
 async def on_message_delete(message):
   
    embdel = discord.Embed(
-        title='User Message deleted'
-        colour = discord.Colour(0x982abc)
+        title='User Message deleted', colour=0x982abc
      	)
    embdel.set_author(name='Subaru')
    embdel.add_field(name=f'User:', value=f'{message.author}')
