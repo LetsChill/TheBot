@@ -66,6 +66,7 @@ async def on_member_join(member):
         )
     embmsg.set_author(name="WonderBot")
     embmsg.add_field(name='User: ', value=f'{member.mention}(ID: {member.id})', inline=False)
+    embmsg.add_field(name='account age:', value=Member.created_at)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg)
 
