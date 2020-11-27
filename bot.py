@@ -49,6 +49,18 @@ async def on_message_edit(before, after):
     await channel.send(embed=embed)
 
 @client.event
+async sec on_message_delete(message):
+  
+   emddel = discord.Embed(
+   	  title='User Deleted message'
+     	)
+   embdel.set_author(Name='Subaru')
+   embed.add_field(name=f'User', value=f'{message.author}')
+   embed.add_field(name='message deleted', value=message)
+   channel = client.get_channel(780760893125689364)
+   await channel.send(embed=emddel)
+
+@client.event
 async def on_member_join(member):
     embmsg = discord.Embed(
         title='User joined:', color=0x982abc
