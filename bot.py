@@ -54,7 +54,7 @@ async def on_message_delete(message):
    embdel = discord.Embed(
         title='User Deleted message'
      	)
-   embdel.set_author(Name='Subaru')
+   embdel.set_author(name='Subaru')
    embdel.add_field(name=f'User', value=f'{message.author}')
    embdel.add_field(name='message deleted', value=message)
    channel = client.get_channel(780760893125689364)
