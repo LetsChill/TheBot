@@ -3,6 +3,8 @@ import os
 import datetime
 import asyncio
 import random
+import requests
+
 
 from discord import FFmpegPCMAudio
 from discord.ext import commands
