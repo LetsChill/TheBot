@@ -49,10 +49,10 @@ async def on_message_edit(before, after):
     await channel.send(embed=embed)
 
 @client.event
-async sec on_message_delete(message):
+async def on_message_delete(message):
   
    emddel = discord.Embed(
-   	  title='User Deleted message'
+        title='User Deleted message'
      	)
    embdel.set_author(Name='Subaru')
    embed.add_field(name=f'User', value=f'{message.author}')
