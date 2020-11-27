@@ -4,6 +4,7 @@ import datetime
 import asyncio
 import random
 import requests
+import youtube_dl
 
 
 from discord import FFmpegPCMAudio
