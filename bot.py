@@ -130,7 +130,7 @@ async def play(ctx, *, query):
     FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
     video, source = search(query)
-    voice = get(bot.voice_clients, guild=ctx.guild)
+    voice = get(client.voice_clients, guild=ctx.guild)
 
     await join(ctx, voice)
     await ctx.send(f'Now playing.')
