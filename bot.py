@@ -23,9 +23,6 @@ intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix=":", intents=intents)
 
 
-
-music = DiscordUtils.Music()
-
 @client.event
 async def on_ready():
 	print("The bot is up!")
