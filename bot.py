@@ -3,8 +3,16 @@ import os
 import datetime
 import asyncio
 import random
-import DiscordUtils
+
+from discord import FFmpegPCMAudio
 from discord.ext import commands
+from discord.utils import get
+
+from discord.ext import commands
+
+from youtube_dl import YoutubeDL
+from requests import get
+
 
 TOKEN = os.getenv("TOKEN")
 
@@ -98,86 +106,37 @@ async def ban(context, member: discord.Member):
     await channel.send(embed=banembed)
 #--------------------------------Music commands----------------------------------
 
+#Get videos from links or from youtube search
+def search(query):
+    with YoutubeDL({'format': 'bestaudio', 'noplaylist':'True'}) as ydl:
+        try: requests.get(arg)
+        except: info = ydl.extract_info(f"ytsearch:{arg}", download=False)['entries'][0]
+        else: info = ydl.extract_info(arg, download=False)
+    return (info, info['formats'][0]['url'])
+
 
 @client.command()
-async def join(ctx):
-    await ctx.author.voice.channel.connect() #Joins author's voice channel
+async def join(ctx, voice):
+    channel = ctx.author.voice.channel
 
-@client.command()
-async def leave(ctx):
-    await ctx.voice_client.disconnect()
-
-@client.command()
-async def play(ctx, *, url):
-    player = music.get_player(guild_id=ctx.guild.id)
-    if not player:
-        player = music.create_player(ctx, ffmpeg_error_betterfix=True)
-    if not ctx.voice_client.is_playing():
-        await player.queue(url, search=True)
-        song = await player.play()
-        await ctx.send(f"Playing {song.name}")
+    if voice and voice.is_connected():
+        await voice.move_to(channel)
     else:
-        song = await player.queue(url, search=True)
-        await ctx.send(f"Queued {song.name}")
+        voice = await channel.connect()
 
 @client.command()
-async def pause(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song = await player.pause()
-    await ctx.send(f"Paused {song.name}")
+async def play(ctx, *, query):
+    #Solves a problem I'll explain later
+    FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
-@client.command()
-async def resume(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song = await player.resume()
-    await ctx.send(f"Resumed {song.name}")
+    video, source = search(query)
+    voice = get(bot.voice_clients, guild=ctx.guild)
 
-@client.command()
-async def stop(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    await player.stop()
-    await ctx.send("Stopped")
+    await join(ctx, voice)
+    await ctx.send(f'Now playing {info['title']}.')
 
-@client.command()
-async def loop(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song = await player.toggle_song_loop()
-    if song.is_looping:
-        await ctx.send(f"Enabled loop for {song.name}")
-    else:
-        await ctx.send(f"Disabled loop for {song.name}")
-
-@client.command()
-async def queue(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    await ctx.send(f"{', '.join([song.name for song in player.current_queue()])}")
-
-@client.command()
-async def np(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song = player.now_playing()
-    await ctx.send(song.name)
-
-@client.command()
-async def skip(ctx):
-    player = music.get_player(guild_id=ctx.guild.id)
-    data = await player.skip(force=True)
-    if len(data) == 2:
-        await ctx.send(f"Skipped from {data[0].name} to {data[1].name}")
-    else:
-        await ctx.send(f"Skipped {data[0].name}")
-
-@client.command()
-async def volume(ctx, vol):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song, volume = await player.change_volume(float(vol / 100)) # volume should be a float between 0 to 1
-    await ctx.send(f"Changed volume for {song.name} to {volume*100}%")
-
-@client.command()
-async def remove(ctx, index):
-    player = music.get_player(guild_id=ctx.guild.id)
-    song = await player.remove_from_queue(int(index))
-    await ctx.send(f"Removed {song.name} from queue")
+    voice.play(FFmpegPCMAudio(source, **FFMPEG_OPTS), after=lambda e: print('done', e))
+    voice.is_playing()
 
 
 if __name__ == "__main__":
