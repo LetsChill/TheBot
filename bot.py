@@ -51,14 +51,14 @@ async def on_message_edit(before, after):
 @client.event
 async def on_message_delete(message):
   
-   emddel = discord.Embed(
+   embdel = discord.Embed(
         title='User Deleted message'
      	)
    embdel.set_author(Name='Subaru')
-   embed.add_field(name=f'User', value=f'{message.author}')
-   embed.add_field(name='message deleted', value=message)
+   embdel.add_field(name=f'User', value=f'{message.author}')
+   embdel.add_field(name='message deleted', value=message)
    channel = client.get_channel(780760893125689364)
-   await channel.send(embed=emddel)
+   await channel.send(embed=embdel)
 
 @client.event
 async def on_member_join(member):
