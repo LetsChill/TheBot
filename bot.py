@@ -118,6 +118,7 @@ def search(query):
 @client.command()
 async def join(ctx, voice):
     channel = ctx.author.voice.channel
+    voice = get(client.voice_clients, guild=ctx.guild)
 
     if voice and voice.is_connected():
         await voice.move_to(channel)
