@@ -52,10 +52,11 @@ async def on_message_edit(before, after):
 async def on_message_delete(message):
   
    embdel = discord.Embed(
-        title='User Deleted message'
+        title='User Message deleted'
+        colour = discord.Colour(0x982abc)
      	)
    embdel.set_author(name='Subaru')
-   embdel.add_field(name=f'User', value=f'{message.author}')
+   embdel.add_field(name=f'User:', value=f'{message.author}')
    embdel.add_field(name='message deleted', value=message.content)
    channel = client.get_channel(780760893125689364)
    await channel.send(embed=embdel)
