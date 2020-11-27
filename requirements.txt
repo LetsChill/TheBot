@@ -3,4 +3,5 @@ discord.py
 flask
 PyNaCl
 dnspython
-DiscordUtils
+youtube-dl
+requests
