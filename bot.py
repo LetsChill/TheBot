@@ -156,7 +156,7 @@ async def play(self, ctx: commands.Context, *, search: str):
       source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop)
     except YTDLError as e:
       await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
-   else:
+  else:
     song = Song(source)
 
     await ctx.voice_state.songs.put(song)
