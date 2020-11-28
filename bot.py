@@ -129,7 +129,7 @@ embed.add_field(name="ban", value="ban a member ?ban [user] [reason]", inline=Tr
 embed.add_field(name="kick", value="kick a member ?kick [user] [reason]", inline=True)
 embed.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
 embed.set_footer(text="Bot Coding by ChibiSubaru#2483")
-await ctx.send(embed=embed)
+    await ctx.send(embed=embed)
 #--------------------------------Music commands----------------------------------
 
 #Get videos from links or from youtube search
