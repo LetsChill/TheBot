@@ -117,19 +117,21 @@ async def ban(context, member: discord.Member):
     await channel.send(embed=banembed)
 
 @client.command()
-async def help():
-    embed=discord.Embed(title="Commands availble", description="commands:", color=0x7a219e)
-embed.set_author(name="Subaru 1.0v")
-embed.add_field(name="help", value="Shows commands availble", inline=False)
-embed.add_field(name="play", value="plays a spesific music (under maintance)", inline=True)
-embed.add_field(name="stop", value="stop the music (under maintenance)", inline=True)
-embed.add_field(name="join", value="join a voice channel (under maintenance)", inline=True)
-embed.add_field(name="leave", value="leaves a voice channel (under maintanance)", inline=True)
-embed.add_field(name="ban", value="ban a member ?ban [user] [reason]", inline=True)
-embed.add_field(name="kick", value="kick a member ?kick [user] [reason]", inline=True)
-embed.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
-embed.set_footer(text="Bot Coding by ChibiSubaru#2483")
-    await ctx.send(embed=embed)
+async def help(context):
+    embhelp=discord.Embed(
+    title="Commands availble", description="commands:", color=0x7a219e 
+    )
+    embhelp.set_author(name="Subaru 1.0v")
+    embhelp.add_field(name="help", value="Shows commands availble", inline=False)
+    embhelp.add_field(name="play", value="plays a spesific music (under maintance)", inline=True)
+    embhelp.add_field(name="stop", value="stop the music (under maintenance)", inline=True)
+    embhelp.add_field(name="join", value="join a voice channel (under maintenance)", inline=True)
+    embhelp.add_field(name="leave", value="leaves a voice channel (under maintanance)", inline=True)
+    embhelp.add_field(name="ban", value="ban a member ?ban [user] [reason]", inline=True)
+    embhelp.add_field(name="kick", value="kick a member ?kick [user] [reason]", inline=True)
+    embhelp.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
+    embhelp.set_footer(text="Bot Coding by ChibiSubaru#2483")
+    await context.send(embed=embhelp)
 #--------------------------------Music commands----------------------------------
 
 #Get videos from links or from youtube search
