@@ -20,7 +20,7 @@ from requests import get
 TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents().all()
-client = commands.AutoShardedBot(command_prefix=":", intents=intents, help_command=none)
+client = commands.AutoShardedBot(command_prefix=":", intents=intents, help_command=None)
 
 
 @client.event
