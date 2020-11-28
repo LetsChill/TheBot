@@ -145,27 +145,21 @@ async def help(context):
     await context.send(embed=embhelp)
 #--------------------------------Music commands----------------------------------                                   
 
-@client.command(pass_context=True)
-async def play(ctx, url):
-    if not ctx.message.author.voice:
-        await ctx.send('you are not connected to a voice channel')
-        return
+@client.command(name='play', aliases=['p'])
+async def play(self, ctx: commands.Context, *, search: str):
+  if not ctx.voice_state.voice:
+    await ctx.invoke(self._join)
 
-    else:
-        channel = ctx.message.author.voice.channel
+  async with ctx.typing():
+    try:
+      source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop)
+    except YTDLError as e:
+      await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
+  else:
+    song = Song(source)
 
-    voice_client = await channel.connect()
-
-    guild = ctx.message.guild
-
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        file = ydl.extract_info(url, download=True)
-        path = str(file['title']) + "-" + str(file['id'] + ".mp3")
-
-    voice_client.play(discord.FFmpegPCMAudio(path), after=lambda x: endSong(guild, path))
-    voice_client.source = discord.PCMVolumeTransformer(voice_client.source, 1)
-
-    await ctx.send(f'**Music: **{url}')
+    await ctx.voice_state.songs.put(song)
+    await ctx.send('Enqueued {}'.format(str(source)))
 
 if __name__ == "__main__":
     client.run(TOKEN)
