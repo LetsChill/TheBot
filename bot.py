@@ -169,5 +169,20 @@ async def play(ctx, url):
     await ctx.send(f'**Music: **{url}')
 
 
+@client.command(pass_context=True)
+async def leave(ctx):
+    if not ctx.message.author.voice:
+        await ctx.send('you are not in a voice channel or i am not in a voice channel!')
+        return
+
+    else:
+        channel = ctx.message.author.voice.channel
+
+    voice_client = await channel.leave()
+
+    guild = ctx.message.guild
+
+
+
 if __name__ == "__main__":
     client.run(TOKEN)
