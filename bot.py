@@ -5,7 +5,8 @@ import asyncio
 import random
 import requests
 import youtube_dl
-
+import ffmpeg
+import ffprobe
 
 from discord import FFmpegPCMAudio
 from discord.ext import commands
