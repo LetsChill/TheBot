@@ -22,6 +22,18 @@ TOKEN = os.getenv("TOKEN")
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="?", intents=intents, help_command=None)
 
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
+}   
+
+def endSong(guild, path):
+    os.remove(path)
+
 
 @client.event
 async def on_ready():
@@ -132,40 +144,29 @@ async def help(context):
     embhelp.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
     embhelp.set_footer(text="Bot Coding by ChibiSubaru#2483")
     await context.send(embed=embhelp)
-#--------------------------------Music commands----------------------------------
+#--------------------------------Music commands----------------------------------                                   
 
-#Get videos from links or from youtube search
-def search(query):
-    with YoutubeDL({'format': 'bestaudio', 'noplaylist':'True'}) as ydl:
-        try: requests.get(arg)
-        except: info = ydl.extract_info(f"ytsearch:{arg}", download=False)['entries'][0]
-        else: info = ydl.extract_info(arg, download=False)
-    return (info, info['formats'][0]['url'])
+@client.command(pass_context=True)
+async def play(ctx, url):
+    if not ctx.message.author.voice:
+        await ctx.send('you are not connected to a voice channel')
+        return
 
-
-@client.command()
-async def join(ctx, voice):
-    channel = ctx.author.voice.channel
-    voice = get(client.voice_clients, guild=ctx.guild)
-
-    if voice and voice.is_connected():
-        await voice.move_to(channel)
     else:
-        voice = await channel.connect()
+        channel = ctx.message.author.voice.channel
 
-@client.command()
-async def play(ctx, *, query):
-    #Solves a problem I'll explain later
-    FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
+    voice_client = await channel.connect()
 
-    video, source = search(query)
-    voice = get(client.voice_clients, guild=ctx.guild)
+    guild = ctx.message.guild
 
-    await join(ctx, voice)
-    await ctx.send(f'Now playing.')
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        file = ydl.extract_info(url, download=True)
+        path = str(file['title']) + "-" + str(file['id'] + ".mp3")
 
-    voice.play(FFmpegPCMAudio(source, **FFMPEG_OPTS), after=lambda e: print('done', e))
-    voice.is_playing()
+    voice_client.play(discord.FFmpegPCMAudio(path), after=lambda x: endSong(guild, path))
+    voice_client.source = discord.PCMVolumeTransformer(voice_client.source, 1)
+
+    await ctx.send(f'**Music: **{url}')
 
 
 if __name__ == "__main__":
