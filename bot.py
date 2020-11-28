@@ -146,7 +146,7 @@ async def help(context):
     await context.send(embed=embhelp)
 #--------------------------------Music commands----------------------------------                                   
 
-@commands.command(name='play', aliases=['p'])
+@client.command(name='play', aliases=['p'])
 async def _play(self, ctx: commands.Context, *, search: str):
   if not ctx.voice_state.voice:
     await ctx.invoke(self._join)
