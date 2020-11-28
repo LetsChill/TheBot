@@ -178,7 +178,7 @@ async def leave(ctx):
     else:
         channel = ctx.message.author.voice.channel
 
-    voice_client = await channel.leave()
+    voice_client = await channel.disconnect()
 
     guild = ctx.message.guild
 
