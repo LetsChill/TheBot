@@ -147,7 +147,7 @@ async def help(context):
 #--------------------------------Music commands----------------------------------                                   
 
 @client.command(name='play', aliases=['p'])
-async def _play(self, ctx: commands.Context, *, search: str):
+async def play(self, ctx: commands.Context, *, search: str):
   if not ctx.voice_state.voice:
     await ctx.invoke(self._join)
 
