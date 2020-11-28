@@ -20,7 +20,7 @@ from requests import get
 TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents().all()
-client = commands.AutoShardedBot(command_prefix=":", intents=intents)
+client = commands.AutoShardedBot(command_prefix=":", intents=intents, help_command=none)
 
 
 @client.event
@@ -65,8 +65,7 @@ async def on_member_join(member):
         title='User joined:', color=0x982abc
         )
     embmsg.set_author(name="WonderBot")
-    embmsg.add_field(name='User: ', value=f'{member.mention}(ID: {member.id})', inline=False)
-    embmsg.add_field(name='account age:', value=Member.created_at)
+    embmsg.add_field(name='User: ', value=f'{member.mention}(ID: {member.id})', inline=False) :', value=Member.created_at)
     channel = client.get_channel(780760725299396629)
     await channel.send(embed=embmsg)
 
@@ -116,6 +115,21 @@ async def ban(context, member: discord.Member):
     
     await context.send('User ' + member.mention + ' has been banned')
     await channel.send(embed=banembed)
+
+@client.command()
+async def help():
+    embed=discord.Embed(title="Commands availble", description="commands:", color=0x7a219e)
+embed.set_author(name="Subaru 1.0v")
+embed.add_field(name="help", value="Shows commands availble", inline=False)
+embed.add_field(name="play", value="plays a spesific music (under maintance)", inline=True)
+embed.add_field(name="stop", value="stop the music (under maintenance)", inline=True)
+embed.add_field(name="join", value="join a voice channel (under maintenance)", inline=True)
+embed.add_field(name="leave", value="leaves a voice channel (under maintanance)", inline=True)
+embed.add_field(name="ban", value="ban a member ?ban [user] [reason]", inline=True)
+embed.add_field(name="kick", value="kick a member ?kick [user] [reason]", inline=True)
+embed.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
+embed.set_footer(text="Bot Coding by ChibiSubaru#2483")
+await ctx.send(embed=embed)
 #--------------------------------Music commands----------------------------------
 
 #Get videos from links or from youtube search
