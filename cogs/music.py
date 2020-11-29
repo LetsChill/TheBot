@@ -42,7 +42,6 @@ class Music(commands.Cog):
         voice = get(self.bot.voice_clients, guild=ctx.guild)
 
         await join(ctx, voice)
-        await ctx.send(f'Now playing {info['title']}.')
 
 
 def setup(client):
