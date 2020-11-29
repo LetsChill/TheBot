@@ -44,7 +44,7 @@ async def ban(self, context, member: discord.Member):
     await context.send('User ' + member.mention + ' has been banned')
     await channel.send(embed=banembed)
 
-@client.command()
+@commands.command()
 async def help(context):
     embhelp=discord.Embed(
     title="Commands availble", description="commands:", color=0x7a219e 
