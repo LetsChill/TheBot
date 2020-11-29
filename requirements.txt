@@ -5,3 +5,5 @@ PyNaCl
 dnspython
 youtube-dl
 requests
+discord.py[voice]
+wavelink
