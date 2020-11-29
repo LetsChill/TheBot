@@ -8,7 +8,7 @@ class Logging(commands.Cog):
         self.client = client
 
     @commands.Cog.listener()
-    async def on_message_edit(before, after):
+    async def on_message_edit(self, before, after):
         embed = discord.Embed(
         timestamp=after.created_at,
         description = "message was edited", color=0x982abc
@@ -22,7 +22,7 @@ class Logging(commands.Cog):
         await channel.send(embed=embed)
 
     @commands.Cog.listener()
-    async def on_message_delete(message):
+    async def on_message_delete(self, message):
   
         embdel = discord.Embed(
         title='User Message deleted', color=0x982abc
@@ -34,7 +34,7 @@ class Logging(commands.Cog):
         await channel.send(embed=embdel)
 
     @commands.Cog.listener()
-    async def on_member_join(member):
+    async def on_member_join(self, member):
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
@@ -44,7 +44,7 @@ class Logging(commands.Cog):
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
-    async def on_member_remove(member):
+    async def on_member_remove(self, member):
         embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
