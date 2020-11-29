@@ -39,7 +39,7 @@ class Music(commands.Cog):
         FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
         video, source = search(query)
-        voice = get(self.bot.voice_clients, guild=ctx.guild)
+        voice = get(self.client.voice_clients, guild=ctx.guild)
 
         await join(ctx, voice)
 
