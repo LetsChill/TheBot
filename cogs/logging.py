@@ -2,6 +2,8 @@ import discord
 
 from discord.ext import commands
 
+from discord.utils import get
+
 class Logging(commands.Cog):
 
     def __init__(self, client):
@@ -59,7 +61,11 @@ class Logging(commands.Cog):
         channel = get(guild.channels, name = "test")
         await channel.edit(name = f"Member Count : {guild.members}")
     
-        
+        @commands.Cog.listener()
+    async def on_member_remove(self, member):
+        guild = member.guild
+        channel = get(guild.channels, name = "test")
+        await channel.edit(name = f"Member Count : {guild.members}")
 
 
 def setup(client):
