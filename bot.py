@@ -78,7 +78,7 @@ async def help(context):
 #--------------------------------Music commands----------------------------------                           
 
 for filename in os.listdir('./cogs'):
-    if filename.endwith('.py'):
+    if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
 
 if __name__ == "__main__":
