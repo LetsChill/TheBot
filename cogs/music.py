@@ -26,23 +26,23 @@ class Music(commands.Cog):
 
     @commands.command()
     async def join(self, ctx, voice):
-    channel = ctx.author.voice.channel
+        channel = self.ctx.author.voice.channel
 
-    if voice and voice.is_connected():
-        await voice.move_to(channel)
-    else:
-        voice = await channel.connect()
+        if voice and voice.is_connected():
+            await voice.move_to(channel)
+        else:
+            voice = await channel.connect()
 
-    @bot.command()
-async def play(self, ctx, *, query):
+    @commands.command()
+    async def play(self, ctx, *, query):
     #Solves a problem I'll explain later
-    FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
+        FFMPEG_OPTS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
-    video, source = search(query)
-    voice = get(self.bot.voice_clients, guild=ctx.guild)
+        video, source = search(query)
+        voice = get(self.bot.voice_clients, guild=ctx.guild)
 
-    await join(ctx, voice)
-    await ctx.send(f'Now playing {info['title']}.')
+        await join(ctx, voice)
+        await ctx.send(f'Now playing {info['title']}.')
 
 
 def setup(client):
