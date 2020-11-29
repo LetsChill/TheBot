@@ -12,7 +12,7 @@ class Moderator(commands.Cog):
     @commands.has_any_role("clear perms", "Admin")
     async def clear(self, ctx, amount=1):
         await ctx.channel.purge(limit=amount)
-        await ctx.channel.send(f"purged {amount} messages")
+        await ctx.channel.send(f"purged {amount} messages", delete_after=4)
 
     @commands.command()
     @commands.has_permissions(kick_members=True)
