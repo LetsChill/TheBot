@@ -47,7 +47,7 @@ class Moderator(commands.Cog):
         await channel.send(embed=banembed)
 
     @commands.command()
-    async def help(context):
+    async def help(self, context):
         embhelp=discord.Embed(
         title="Commands availble", description="commands:", color=0x7a219e 
         )
