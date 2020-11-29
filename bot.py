@@ -21,20 +21,7 @@ async def on_ready():
 @client.event
 async def on_ready():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Emilia Suffer"))
-     
-@client.event
-async def on_member_join(member):
-    guild = member.guild
-    channel = get(guild.channels, name = "test")
-    await channel.edit(name = f"Member Count : {guild.members}")
-    
-@client.event
-async def on_member_remove(member):
-    guild = member.guild
-    channel = get(guild.channels, name = "test")
-    await channel.edit(name = f"Member Count : {guild.members}")
                         
-
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
