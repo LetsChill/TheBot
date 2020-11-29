@@ -2,8 +2,6 @@ import discord
 
 from discord.ext import commands
 
-from discord.utils import get
-
 class Logging(commands.Cog):
 
     def __init__(self, client):
@@ -54,19 +52,6 @@ class Logging(commands.Cog):
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = self.client.get_channel(780760725299396629)
         await channel.send(embed=embmsg1)
-        
-    @commands.Cog.listener()
-    async def on_member_join(self, member):
-        guild = member.guild
-        channel = get(guild.channels, name = "test")
-        await channel.edit(name = f"Member Count : {guild.members}")
-    
-    @commands.Cog.listener()
-    async def on_member_remove(self, member):
-        guild = member.guild
-        channel = get(guild.channels, name = "test")
-        await channel.edit(name = f"Member Count : {guild.members}")
-
 
 def setup(client):
     client.add_cog(Logging(client))
