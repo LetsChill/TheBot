@@ -65,7 +65,7 @@ async def help(context):
 
 
 def setup(client):
-    client.add_cog(Logging(client))
+    client.add_cog(Moderator(client))
 
 
 
