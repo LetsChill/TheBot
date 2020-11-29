@@ -1,5 +1,5 @@
 import discord
-import youtube-dl
+import youtube_dl
 
 from discord.ext import commands
 
