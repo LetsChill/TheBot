@@ -51,7 +51,15 @@ class Logging(commands.Cog):
         embmsg1.set_author(name="WonderBot")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = self.client.get_channel(780760725299396629)
-        await channel.send(embed=embmsg1) 
+        await channel.send(embed=embmsg1)
+        
+    @commands.Cog.listener()
+    async def on_member_join(self, member):
+        guild = member.guild
+        channel = get(guild.channels, name = "test")
+        await channel.edit(name = f"Member Count : {guild.members}")
+    
+        
 
 
 def setup(client):
