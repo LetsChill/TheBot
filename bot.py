@@ -4,36 +4,13 @@ import os
 import datetime
 import asyncio
 import random
-import requests
-import youtube_dl
-
-from discord import FFmpegPCMAudio
-from discord.ext import commands
-from discord.utils import get
 
 from discord.ext import commands
-
-from youtube_dl import YoutubeDL
-from requests import get
-
 
 TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="?", intents=intents, help_command=None)
-
-ydl_opts = {
-    'format': 'bestaudio/best',
-    'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'mp3',
-        'preferredquality': '192',
-    }],
-}   
-
-def endSong(guild, path):
-    os.remove(path)
-
 
 @client.event
 async def on_ready():
@@ -144,23 +121,7 @@ async def help(context):
     embhelp.add_field(name="clear", value="clear messages ?clear [value] default is 5 ", inline=True)
     embhelp.set_footer(text="Bot Coding by ChibiSubaru#2483")
     await context.send(embed=embhelp)
-#--------------------------------Music commands----------------------------------                                   
-
-@client.command(name='play', aliases=['p'])
-async def play(self, ctx: commands.Context, *, search: str):
-  if not ctx.voice_state.voice:
-    await ctx.invoke(self._join)
-
-  async with ctx.typing():
-    try:
-      source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop)
-    except YTDLError as e:
-      await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
-    else:
-     song = Song(source)
-
-    await ctx.voice_state.songs.put(song)
-    await ctx.send('Enqueued {}'.format(str(source)))
+#--------------------------------Music commands----------------------------------                           
 
 if __name__ == "__main__":
     client.run(TOKEN)
