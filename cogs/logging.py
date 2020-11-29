@@ -39,8 +39,8 @@ class Logging(commands.Cog):
         title='User joined:', color=0x982abc
         )
         embmsg.set_author(name="WonderBot")
-        embmsg.add_field(name='User: ', value=f'{member.mention}(ID: {member.id})', inline=False)
-        channel = self.client.get_channel(780760725299396629)
+        embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
+        channel = self.client.get_channel(780760725299396629) 
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
