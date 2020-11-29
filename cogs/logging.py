@@ -6,6 +6,8 @@ class Logging(commands.Cog):
 
     def __init__(self, client):
         self.client = client
+        
+client = commands.AutoShardedBot(command_prefix="?", intents=intents, help_command=None)
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
