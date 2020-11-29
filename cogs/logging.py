@@ -4,8 +4,6 @@ from discord.ext import commands
 
 class Logging(commands.Cog):
 
-client = commands.AutoShardedBot(command_prefix="?", intents=intents, help_command=None)
-
     def __init__(self, client):
         self.client = client
 
