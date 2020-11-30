@@ -24,7 +24,7 @@ async def on_ready():
      
 @client.event
 async def on_message(message):
-    if(message.channel.id == ""):
+    if(message.channel.id == "776751694570061884"):
         await client.add_reaction(message, "✅")
                         
 for filename in os.listdir('./cogs'):
