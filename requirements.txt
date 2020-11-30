@@ -7,3 +7,4 @@ youtube-dl
 requests
 discord.py[voice]
 wavelink
+DiscordUtils
