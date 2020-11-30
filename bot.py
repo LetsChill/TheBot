@@ -21,11 +21,6 @@ async def on_ready():
 @client.event
 async def on_ready():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="?help for guild"))
-     
-@client.event
-async def on_message(message):
-    if(message.channel.id == "776751694570061884"):
-        await client.add_reaction(message, "✅")
                         
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
