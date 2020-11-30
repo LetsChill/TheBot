@@ -8,7 +8,11 @@ import random
 from discord.ext import commands
 from discord.utils import get
 
-TOKEN = os.getenv("TOKEN")
+EMAIL = os.getenv("EMAIL")
+
+PASS = os.getenv("PASS")
+
+
 
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="?", intents=intents, help_command=None)
@@ -27,4 +31,4 @@ for filename in os.listdir('./cogs'):
        client.load_extension(f'cogs.{filename[:-3]}')
 
 if __name__ == "__main__":
-    client.run(TOKEN)
+    client.run(EMAIL, PASS)
