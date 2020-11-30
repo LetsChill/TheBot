@@ -80,7 +80,7 @@ class Music(commands.Cog):
         await ctx.send('Now playing: {}'.format(query))
 
     @commands.command()
-    async def yt(self, ctx, *, url):
+    async def p(self, ctx, *, url):
         """Plays from a url (almost anything youtube_dl supports)"""
 
         async with ctx.typing():
