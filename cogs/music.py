@@ -127,5 +127,5 @@ class Music(commands.Cog):
                 raise commands.CommandError("Author not connected to a voice channel.")
         elif ctx.voice_client.is_playing():
             ctx.voice_client.stop()
-
-client.add_cog(Music(client))
+def setup(client):
+    client.add_cog(Music(client))
