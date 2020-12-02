@@ -23,12 +23,14 @@ class Moderator(commands.Cog):
         kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
         kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
         channel = self.client.get_channel(780760958242652160)
-      
-        await member.kick()
+        if member.mention.has_roles(admin, moderator, trial)
+          await channel.send("this member is a moderatr, i cannot kick him?")
+        else:
+          await member.kick()
                 
         
-        await context.send('User ' + member.mention + ' has been kicked')
-        await channel.send(embed=kickembed)
+          await context.send('User ' + member.mention + ' has been kicked')
+          await channel.send(embed=kickembed)
 
 
     @commands.command()
