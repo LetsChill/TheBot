@@ -21,12 +21,6 @@ async def on_ready():
 @client.event
 async def on_ready():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="?help for guild"))
-     
-     
-@client.command(pass_context=True)
-async def giverole(ctx, user: discord.Member, role: discord.Role):
-    await user.add_roles(role)
-    await ctx.send(f"hey {ctx.author.name}, {user.name} has been giving a role called: {role.name}")
                         
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
