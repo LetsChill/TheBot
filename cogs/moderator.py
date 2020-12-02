@@ -50,14 +50,14 @@ class Moderator(commands.Cog):
         embhelp=discord.Embed(
         title="Commands availble", description="commands:", color=0x7a219e 
         )
-        embhelp.set_author(name="Subaru 1.0v")
+        embhelp.set_author(name="Costum Bot 1.1v")
         embhelp.add_field(name="help", value="Shows commands availble", inline=False)
         embhelp.add_field(name="play", value="?play [url] or ?play [search engine]", inline=True)
         embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="join", value="join a voice channel with [ID] of the channel", inline=True)
         embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
-        embhelp.add_field(name="queue", value="shows what is the next playlist, not availbe", inline=True)
+        embhelp.add_field(name="remove", value="?remove [order number in the queue], to remove any playlist from the queue", inline=True)
         embhelp.add_field(name=" volume", value="volume between 0 to 100%, the bot will show more but its actualy makes it max [100%] ", inline=True)
         embhelp.set_footer(text="Bot Coding by HАJякя#2483")
         await context.send(embed=embhelp)
