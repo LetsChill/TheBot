@@ -23,14 +23,11 @@ class Moderator(commands.Cog):
         kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
         kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
         channel = self.client.get_channel(780760958242652160)
-        if member.mention.has_roles(admin, moderator, trial)
-          await channel.send("this member is a moderatr, i cannot kick him?")
-        else:
-          await member.kick()
+        await member.kick()
                 
         
-          await context.send('User ' + member.mention + ' has been kicked')
-          await channel.send(embed=kickembed)
+        await context.send('User ' + member.mention + ' has been kicked')
+        await channel.send(embed=kickembed)
 
 
     @commands.command()
@@ -59,7 +56,7 @@ class Moderator(commands.Cog):
         embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="join", value="join a voice channel with [ID] of the channel", inline=True)
         embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
-        embhelp.add_field(name="stream", value="play the music with less earrape", inline=True)
+        embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
         embhelp.add_field(name="queue", value="shows what is the next playlist, not availbe", inline=True)
         embhelp.add_field(name=" volume", value="volume between 0 to 100%, the bot will show more but its actualy makes it max [100%] ", inline=True)
         embhelp.set_footer(text="Bot Coding by ChibiSubaru#2483")
