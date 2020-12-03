@@ -106,3 +106,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 /cogs/counter.py
+/cogs/invites.py

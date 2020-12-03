@@ -58,7 +58,7 @@ class Moderator(commands.Cog):
         embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
         embhelp.add_field(name="remove", value="?remove [order number in the queue], to remove any playlist from the queue", inline=True)
-        embhelp.add_field(name=" volume", value="volume between 0 to 100%, the bot will show more but its actualy makes it max [100%] ", inline=True)
+        embhelp.add_field(name="donate", value="Make my Day amazing and buy me a cake!", inline=True)
         embhelp.set_footer(text="Bot Coding by HАJякя#2483")
         await context.send(embed=embhelp)
 
