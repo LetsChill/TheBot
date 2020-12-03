@@ -20,7 +20,14 @@ async def on_ready():
 
 @client.event
 async def on_ready():
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Under Development in this moment"))
+     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Under Development in this moment")
+     
+@client.command(ctx)
+async def donate():
+    dembed=discord.Embed(
+    title="Donate me!", description="http://paypal.me/LetsChiLI", color=0x7a219e 
+    )
+    await ctx.send(embed=dembed)
                         
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
