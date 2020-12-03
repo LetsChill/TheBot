@@ -22,7 +22,6 @@ async def on_ready():
 async def on_ready():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Under Development in this moment")
                  
-                 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
