@@ -1,5 +1,5 @@
 import discord
-from discord.exr import commands
+from discord.ext import commands
 
 class Text(commands.Cog):
 
