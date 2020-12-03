@@ -1,4 +1,3 @@
-
 import discord
 import os
 import datetime
@@ -20,12 +19,11 @@ async def on_ready():
 
 @client.event
 async def on_ready():
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Under Development in this moment")
-                 
+     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="?help for guild"))
+                        
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
-
 
 if __name__ == "__main__":
     client.run(TOKEN)
