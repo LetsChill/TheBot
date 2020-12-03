@@ -8,38 +8,10 @@ class Text(commands.Cog):
         
     @commands.command(self, ctx)
     async def donate():
-        dembed = discord.Embed(
-        title="Buy Me a cake and make my day!"
-        description="http://paypal.me/LetsChiLI", color=0x982abc
+        dembed=discord.Embed(
+        title="Donate me!", description="http://paypal.me/LetsChiLI", color=0x7a219e 
         )
-        await ctx.send(dembed=embed)
-    
-    
-    
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        await ctx.send(embed=dembed)
         
         
         
