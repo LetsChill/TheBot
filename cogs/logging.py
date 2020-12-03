@@ -18,7 +18,7 @@ class Logging(commands.Cog):
         embed.add_field(name=f'User: ', value=f'{before.author.mention}', inline=False)
         embed.add_field(name='Before:', value=before.content, inline=False)
         embed.add_field(name="After:", value=after.content, inline=False)
-        channel = self.client.get_channel(780760893125689364)
+        channel = self.client.get_channel(784105832509341706)
         await channel.send(embed=embed)
 
     @commands.Cog.listener()
@@ -30,7 +30,7 @@ class Logging(commands.Cog):
         embdel.set_author(name='Subaru')
         embdel.add_field(name=f'User:', value=f'{message.author.mention}')
         embdel.add_field(name='message deleted', value=message.content)
-        channel = self.client.get_channel(780760893125689364)
+        channel = self.client.get_channel(784105832509341706)
         await channel.send(embed=embdel)
 
     @commands.Cog.listener()
@@ -40,7 +40,7 @@ class Logging(commands.Cog):
         )
         embmsg.set_author(name="WonderBot")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
-        channel = self.client.get_channel(780760725299396629) 
+        channel = self.client.get_channel(784105856303366204)
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
@@ -50,7 +50,7 @@ class Logging(commands.Cog):
         )
         embmsg1.set_author(name="WonderBot")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
-        channel = self.client.get_channel(780760725299396629)
+        channel = self.client.get_channel(784105856303366204)
         await channel.send(embed=embmsg1)
 
 def setup(client):
