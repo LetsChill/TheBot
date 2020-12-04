@@ -12,4 +12,4 @@ class Server(commands.Cog):
         await guild.create_text_channel("general┃💭", category="Text Channels")
         
 def setup(client):
-    client.add_cog(Server(client)
+    client.add_cog(Server(client))
