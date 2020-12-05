@@ -2,8 +2,6 @@ import discord
 
 from discord.ext import commands
 
-from discord.utils import get
-
 class Logging(commands.Cog):
 
     def __init__(self, client):
@@ -37,16 +35,23 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        guild = member.guild
-        channel = get(guild.channels, name = "Member Counter:")
-        await channel.edit(name = f"Member Counter: {guild.member_count}")
-        
+        embmsg = discord.Embed(
+        title='User joined:', color=0x982abc
+        )
+        embmsg.set_author(name="WonderBot")
+        embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
+        channel = self.client.get_channel(784105856303366204)
+        await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        guild = member.guild
-        channel = get(guild.channels, name = "Member Counter:")
-        await channel.edit(name = f"Member Counter: {guild.member_count}")
+        embmsg1 = discord.Embed(
+        title='User left:', color=0x982abc
+        )
+        embmsg1.set_author(name="WonderBot")
+        embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
+        channel = self.client.get_channel(784105856303366204)
+        await channel.send(embed=embmsg1)
 
 def setup(client):
     client.add_cog(Logging(client))
