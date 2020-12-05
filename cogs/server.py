@@ -12,6 +12,9 @@ class Server(commands.Cog):
     @commands.has_any_role("Owner")
     async def create(self, ctx):
         guild = ctx.guild
+        for channel in guild.channels:
+        await channel.delete()
+        
         
         await guild.create_voice_channel("Member Counter:")
         
