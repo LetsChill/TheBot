@@ -13,7 +13,7 @@ class Server(commands.Cog):
     async def create(self, ctx):
         guild = ctx.guild
         for channel in guild.channels:
-        await channel.delete()
+            await channel.delete()
         
         
         await guild.create_voice_channel("Member Counter:")
