@@ -25,7 +25,7 @@ class Server(commands.Cog):
         stfcat = await guild.create_category("staff chat")
         
         await guild.create_text_channel("general┃💭", category=txtcat)
-        await guild.create_text_channel("check-invites┃🎟", category=txtcat)
+        await guild.create_text_channel("bot-commands┃🤖", category=txtcat)
         
         await guild.create_text_channel("invite-tracker┃🧭", category=ancat)
         await guild.create_text_channel("announcements┃📢", category=ancat)
