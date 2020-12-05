@@ -36,7 +36,7 @@ class Logging(commands.Cog):
         await channel.send(embed=embdel)
 
     @commands.Cog.listener()
-    async def on_member_join(self, member):id
+    async def on_member_join(self, member):
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
