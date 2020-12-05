@@ -22,15 +22,17 @@ class Server(commands.Cog):
         await ctx.send("creating the server at the moment!")
         
         await guild.create_text_channel("general┃💭", category=txtcat)
-        await guild.create_text_channel("check-invites", category=txtcat)
+        await guild.create_text_channel("check-invites┃🎟", category=txtcat)
         
-        await guild.create_text_channel("invite-tracker", category=ancat)
-        await guild.create_text_channel("announcements", category=ancat)
+        await guild.create_text_channel("invite-tracker┃🧭", category=ancat)
+        await guild.create_text_channel("announcements┃📢", category=ancat)
+        await guild.create_text_channel("rules┃📖", category=ancat)
+        await guild.create_text_channel("make-a-ticket┃🎫", category=ancat)
         
-        await guild.create_text_channel("giveaway-1", category=givcat)
-        await guild.create_text_channel("giveaway-2", category=givcat)
-        await guild.create_text_channel("giveaway-3", category=givcat)
-        await guild.create_text_channel("proofs", category=givcat)
+        await guild.create_text_channel("giveaway┃1", category=givcat)
+        await guild.create_text_channel("giveaway┃2", category=givcat)
+        await guild.create_text_channel("giveaway┃3", category=givcat)
+        await guild.create_text_channel("proofs┃☑️", category=givcat)
         
         await guild.create_text_channel("staff-chat", category=stfcat)
         await guild.create_text_channel("staff-commands", category=stfcat)
