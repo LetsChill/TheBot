@@ -57,7 +57,7 @@ class Logging(commands.Cog):
         embmsg1.set_author(name="WonderBot")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = self.client.get_channel(784105856303366204)
-        counter = get(guild.channels, name = "Member Counter:"
+        counter = get(guild.channels, name = "Member Counter:")
         await counter.edit(name = f"Member Counter: {guild.member_count}")
         await channel.send(embed=embmsg1)
 
