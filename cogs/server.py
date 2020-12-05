@@ -10,7 +10,7 @@ class Server(commands.Cog):
     
     @commands.command()
     async def create(self, ctx):
-                category = await guild.create_cate
+        category = await guild.create_cate
         guild = ctx.guild
         category = await guild.create_category("Text Channel")
         await ctx.send("creating the server atm")
