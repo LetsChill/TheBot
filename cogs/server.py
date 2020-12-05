@@ -9,7 +9,7 @@ class Server(commands.Cog):
     
     
     @commands.command()
-    @commands.cooldown(1, 1000, commands.server.user)
+    @commands.cooldown(1, 1000, commands.BucketType.guild)
     @commands.has_any_role("Owner")
     async def create(self, ctx):
         guild = ctx.guild
