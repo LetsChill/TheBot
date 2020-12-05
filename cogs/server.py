@@ -15,9 +15,6 @@ class Server(commands.Cog):
         for channel in guild.channels:
             await channel.delete()
         
-        
-        await guild.create_voice_channel("Member Counter:")
-        
         ancat = await guild.create_category("Welcome")
         
         txtcat = await guild.create_category("text channels")
@@ -25,8 +22,6 @@ class Server(commands.Cog):
         givcat = await guild.create_category("giveaways")
         
         stfcat = await guild.create_category("staff chat")
-        
-        await ctx.send("creating the server at the moment!")
         
         await guild.create_text_channel("general┃💭", category=txtcat)
         await guild.create_text_channel("check-invites┃🎟", category=txtcat)
