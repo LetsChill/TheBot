@@ -11,6 +11,9 @@ class Server(commands.Cog):
     @commands.command()
     async def create(self, ctx):
         guild = ctx.guild
+        
+        await guild.create_voice_channel("Member Counter:")
+        
         ancat = await guild.create_category("Welcome")
         
         txtcat = await guild.create_category("text channels")
