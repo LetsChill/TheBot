@@ -37,29 +37,16 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        embmsg = discord.Embed(
-        title='User joined:', color=0x982abc
-        )
-        embmsg.set_author(name="WonderBot")
-        embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
-        channel = self.client.get_channel(784105856303366204)
-        
-        counter = get(guild.channels, name = "Member Counter:")
-        await counter.edit(name = f"Member Counter: {guild.member_count}")
-        await channel.send(embed=embmsg)
+        guild = member.guild
+        channel = get(guild.channels, name = "Member Counter:")
+        await channel.edit(name = f"Member Counter: {guild.member_count}")
         
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        embmsg1 = discord.Embed(
-        title='User left:', color=0x982abc
-        )
-        embmsg1.set_author(name="WonderBot")
-        embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
-        channel = self.client.get_channel(784105856303366204)
-        counter = get(guild.channels, name = "Member Counter:")
-        await counter.edit(name = f"Member Counter: {guild.member_count}")
-        await channel.send(embed=embmsg1)
+        guild = member.guild
+        channel = get(guild.channels, name = "Member Counter:")
+        await channel.edit(name = f"Member Counter: {guild.member_count}")
 
 def setup(client):
     client.add_cog(Logging(client))
