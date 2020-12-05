@@ -9,6 +9,7 @@ class Server(commands.Cog):
     
     
     @commands.command()
+    @commands.has_any_role("Owner")
     async def create(self, ctx):
         guild = ctx.guild
         
