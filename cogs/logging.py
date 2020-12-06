@@ -9,7 +9,6 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
-        guild = before.guild
         embed = discord.Embed(
         timestamp=after.created_at,
         description = "message was edited", color=0x982abc
@@ -20,11 +19,10 @@ class Logging(commands.Cog):
         embed.add_field(name='Before:', value=before.content, inline=False)
         embed.add_field(name="After:", value=after.content, inline=False)
         channel = self.client.get_channel(784105832509341706)
-        await guild.channel.send(embed=embed)
+        await channel.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
-        guild = message.guild
         embdel = discord.Embed(
         title='User Message deleted', color=0x982abc
         )
@@ -32,29 +30,27 @@ class Logging(commands.Cog):
         embdel.add_field(name=f'User:', value=f'{message.author.mention}')
         embdel.add_field(name='message deleted', value=message.content)
         channel = self.client.get_channel(784105832509341706)
-        await guild.channel.send(embed=embdel)
+        await channel.send(embed=embdel)
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        guild = member.guild
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
         embmsg.set_author(name="WonderBot")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
         channel = self.client.get_channel(784105856303366204)
-        await guild.channel.send(embed=embmsg)
+        await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        guild = member.guild
         embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
         embmsg1.set_author(name="WonderBot")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = self.client.get_channel(784105856303366204)
-        await guild.channel.send(embed=embmsg1)
+        await channel.send(embed=embmsg1)
 
 def setup(client):
     client.add_cog(Logging(client))
