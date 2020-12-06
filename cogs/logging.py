@@ -19,7 +19,7 @@ class Logging(commands.Cog):
         embed.add_field(name=f'User: ', value=f'{before.author.mention}', inline=False)
         embed.add_field(name='Before:', value=before.content, inline=False)
         embed.add_field(name="After:", value=after.content, inline=False)
-        channel = self.client.get_channel(784105832509341706)
+        channel = discord.utils.get(self.client.get_all_channels(), name='message-logs')
         await channel.send(embed=embed)
 
     @commands.Cog.listener()
@@ -40,7 +40,7 @@ class Logging(commands.Cog):
         )
         embmsg.set_author(name="WonderBot")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
-        channel = self.client.get_channel(784105856303366204)
+        channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
@@ -50,7 +50,7 @@ class Logging(commands.Cog):
         )
         embmsg1.set_author(name="WonderBot")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
-        channel = self.client.get_channel(784105856303366204)
+        channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
         await channel.send(embed=embmsg1)
 
 def setup(client):
