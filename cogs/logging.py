@@ -30,7 +30,7 @@ class Logging(commands.Cog):
         embdel.set_author(name='Subaru')
         embdel.add_field(name=f'User:', value=f'{message.author.mention}')
         embdel.add_field(name='message deleted', value=message.content)
-        channel = discord.utils.get(client.get_all_channels(), name='message-logs')
+        channel = discord.utils.get(self.client.get_all_channels(), name='message-logs')
         await channel.send(embed=embdel)
 
     @commands.Cog.listener()
