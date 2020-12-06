@@ -108,3 +108,5 @@ venv.bak/
 /cogs/counter.py
 /cogs/invites.py
 /cogs/Reaction
+!/cogs/.invites.py.icloud
+

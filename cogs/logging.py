@@ -2,6 +2,7 @@ import discord
 
 from discord.ext import commands
 
+from discord.utils import get
 class Logging(commands.Cog):
 
     def __init__(self, client):
@@ -29,7 +30,7 @@ class Logging(commands.Cog):
         embdel.set_author(name='Subaru')
         embdel.add_field(name=f'User:', value=f'{message.author.mention}')
         embdel.add_field(name='message deleted', value=message.content)
-        channel = self.client.get_channel(784105832509341706)
+        channel = discord.utils.get(client.get_all_channels(), name='message-logs')
         await channel.send(embed=embdel)
 
     @commands.Cog.listener()
