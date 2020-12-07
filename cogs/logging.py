@@ -50,7 +50,7 @@ class Logging(commands.Cog):
         embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
-        embmsg1.set_author(name="Subaru")
+        embmsg1.set_author(name="Subaru.")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
         await channel.send(embed=embmsg1)
