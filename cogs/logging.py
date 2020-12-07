@@ -37,14 +37,12 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        count = discord.utils.get(self.client.get_all_channels(), name='members:')
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
         embmsg.set_author(name="Subaru")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
-        await VoiceChannel.edit(name=f"members: {guild.member_count}")
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
