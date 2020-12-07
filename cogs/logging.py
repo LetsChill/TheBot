@@ -11,6 +11,7 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
+        guild = before.guild
         embed = discord.Embed(
            
         timestamp=after.created_at,
@@ -22,7 +23,7 @@ class Logging(commands.Cog):
         embed.add_field(name='Before:', value=before.content, inline=False)
         embed.add_field(name="After:", value=after.content, inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='message-logs')
-        await channel.send(embed=embed)
+        await guild.channel.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
