@@ -20,7 +20,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	channel = client.get_channel(784103436861440010)
-	await channel.send("<@711885122126741524>)
+	await channel.send("<@711885122126741524>")
 	
 @client.event
 async def on_ready():
