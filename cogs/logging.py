@@ -12,7 +12,7 @@ class Logging(commands.Cog):
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
         embed = discord.Embed(
-        guild = before.guild
+           
         timestamp=after.created_at,
         description = "message was edited", color=0x982abc
         ) 
@@ -22,7 +22,7 @@ class Logging(commands.Cog):
         embed.add_field(name='Before:', value=before.content, inline=False)
         embed.add_field(name="After:", value=after.content, inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='message-logs')
-        await guild.system_channel.send(embed=embed)
+        await channel.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
@@ -37,12 +37,14 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
+        count = discord.utils.get(self.client.get_all_channels(), name='members:')
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
         embmsg.set_author(name="Subaru")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
+        await VoiceChannel.edit(name=f"members: {guild.member_count}")
         await channel.send(embed=embmsg)
 
     @commands.Cog.listener()
@@ -50,7 +52,7 @@ class Logging(commands.Cog):
         embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
-        embmsg1.set_author(name="Subaru.")
+        embmsg1.set_author(name="Subaru")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = discord.utils.get(self.client.get_all_channels(), name='member-logs')
         await channel.send(embed=embmsg1)
