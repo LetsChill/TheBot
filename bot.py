@@ -1,7 +1,6 @@
 #might make a tut on how to add commands
 import discord
 from discord.ext import commands
-from lol import token
 
 token = "NTEzMzUxOTE3NDgxNjIzNTcy.X9Yziw.bp_cWSzIE1YaLKNlmR3H8-pQBEM"
 
