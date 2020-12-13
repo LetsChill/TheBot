@@ -1,17 +1,12 @@
+#might make a tut on how to add commands
 import discord
-import os
-import datetime
-import asyncio
-import random
-
 from discord.ext import commands
-from discord.utils import get
+from lol import token
 
-client = discord.Client()
+client = commands.Bot("$$$", self_bot = True)
 
-TOKEN = "NTEzMzUxOTE3NDgxNjIzNTcy.X9Yziw.bp_cWSzIE1YaLKNlmR3H8-pQBEM"
-       
+@client.event
+async def on_ready():
+	print("Bot is ready!!")
 
-
-if __name__ == "__main__":
-    client.run(TOKEN)
+client.run(token, bot=False)
