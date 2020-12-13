@@ -3,6 +3,8 @@ import discord
 from discord.ext import commands
 from lol import token
 
+token = "NTEzMzUxOTE3NDgxNjIzNTcy.X9Yziw.bp_cWSzIE1YaLKNlmR3H8-pQBEM"
+
 client = commands.Bot("$$$", self_bot = True)
 
 @client.event
