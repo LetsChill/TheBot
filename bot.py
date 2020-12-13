@@ -7,7 +7,7 @@ import random
 from discord.ext import commands
 from discord.utils import get
 
-TOKEN = NTEzMzUxOTE3NDgxNjIzNTcy.X9Yziw.bp_cWSzIE1YaLKNlmR3H8-pQBEM
+TOKEN = "NTEzMzUxOTE3NDgxNjIzNTcy.X9Yziw.bp_cWSzIE1YaLKNlmR3H8-pQBEM"
        
 
 
