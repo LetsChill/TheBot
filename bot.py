@@ -11,13 +11,13 @@ client1 = commands.Bot("$$$", self_bot = True)
 
 client2 = commands.Bot("&&&", self_bot = True)
 
-@client.event
+@client1.event
 async def on_ready():
-   print("Bot is ready!!")
+   print("Bot 1 is ready!!")
 
 @client2.event
 async def on_ready():
-   print("Bot is ready!!")
+   print("Bot 1 is ready!!")
 
 
 loop = asyncio.get_event_loop()
