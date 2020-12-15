@@ -40,6 +40,6 @@ async def on_ready():
 loop = asyncio.get_event_loop()
 loop.create_task(client1.start(TOKEN1, bot=False))
 loop.create_task(client2.start(TOKEN2, bot=False))
-loop.create_task(client2.start(TOKEN3, bot=False))
-loop.create_task(client2.start(TOKEN4, bot=False))
+loop.create_task(client3.start(TOKEN3, bot=False))
+loop.create_task(client4.start(TOKEN4, bot=False))
 loop.run_forever()
