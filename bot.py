@@ -1,6 +1,8 @@
 #might make a tut on how to add commands
 import discord
 
+import asyncio
+
 from discord.ext import commands
 
 TOKEN1 = "Nzc2MDQ5MzMxNjI3MDk4MTQz.X9g9kQ.gqOtml38QCN09pIw9Mjb5mJvb-Y"
