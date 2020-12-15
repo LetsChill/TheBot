@@ -11,8 +11,4 @@ client = commands.Bot("$$$", self_bot = True)
 async def on_ready():
    print("Bot is ready!!")
 
-@client.event
-async def on_ready():
-    await client.accept_invite("https://discord.gg/zQ8PCcvX")
-    print("Server joined!")
 client.run(token, bot=False)
