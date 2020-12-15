@@ -13,4 +13,8 @@ client = commands.Bot("$$$", self_bot = True)
 async def on_ready():
    print("Bot is ready!!")
 
+@client.command()
+async def joinserver(mahlink):
+    await client.accept_invite(mahlink)
+
 client.run(token, bot=False)
