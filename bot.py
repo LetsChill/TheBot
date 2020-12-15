@@ -21,7 +21,7 @@ client4 = discord.Client(self_bot = True)
 
 @client1.event
 async def on_ready():
-   print(f"Bot 1 is ready!!. Login as {client1.user.name")
+   print(f"Bot 1 is ready!!. Login as {client1.user.name}")
 
 @client2.event
 async def on_ready():
