@@ -22,17 +22,21 @@ client4 = discord.Client(self_bot = True)
 @client1.event
 async def on_ready():
    print("Bot 1 is ready!!")
+   print(client1.user.name)
 
 @client2.event
 async def on_ready():
    print("Bot 2 is ready!!")
+   print(client2.user.name)
 
 @client3.event
 async def on_ready():
    print("Bot 3 is ready!!")
+   print(client3.user.name)
 
 @client4.event
 async def on_ready():
+   print(client4.user.name)
    print("Bot 4 is ready!!")
 
 loop = asyncio.get_event_loop()
