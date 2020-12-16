@@ -39,7 +39,7 @@ TOKEN15 = "Nzg4Nzk0NDQ3Mzc0MTg4NTc1.X9osvQ.bncVRtfIqr6HoDdlOlyGHNn-9NI"
 
 #JOINER, LEAVER!!!
 
-TARGET = "https://discordapp.com/api/v6/invites/kcFd6ztN"
+TARGET = "https://discordapp.com/api/v6/invites/QURbjRXqn7"
 
 LEAVE = 742618169419628554
 
