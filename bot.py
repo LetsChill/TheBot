@@ -5,6 +5,8 @@ import asyncio
 
 from discord.utils import get
 
+#TOKEN HOLDER!!!
+
 TOKEN1 = "Nzc2MDQ5MzMxNjI3MDk4MTQz.X9g9kQ.gqOtml38QCN09pIw9Mjb5mJvb-Y"
 
 TOKEN2 = "Nzg4Mzg3ODA4MDAzMDk2NjE2.X9iyBQ.17MOssymUiG45c5wKA6GmA6B2YM"
@@ -25,9 +27,13 @@ TOKEN9 = "Nzg4NjI5MTU4MTYyMDcxNTU0.X9mSbw.oaIdAsZjarHBeu1ipyivwnfWgUY"
 
 TOKENX = "Nzg4NjMwNTkwNzYwMDI2MTYy.X9mUTA.zcEYkwRou8gxPJyXkOIxliXcssg"
 
+#JOINER, LEAVER!!!
+
 TARGET = "https://discordapp.com/api/v6/invites/"
 
 LEAVE = 742618169419628554
+
+#CLIENT DECLARES
 
 client1 = discord.Client(self_bot = True)
 
@@ -49,6 +55,30 @@ client9 = discord.Client(self_bot = True)
 
 clientX = discord.Client(self_bot = True)
 
+#PFP PATHES
+
+pfp1_p = "TheBot/1ECEA55B-AA3B-4FB6-87AE-B1E9B910238E.png"
+
+pfp2_p = "TheBot/3847A3D1-A799-4D95-8E79-64F6D252D9CA.jpeg"
+
+pfp3_p = "TheBot/6A13666E-9DF8-4BF7-B09E-1C1812F6DA73.jpeg"
+
+pfp4_p = "TheBot/D6B33B1B-D902-487E-A569-EEE3410ABE04.jpeg"
+
+fp1 = open(pfp1_p, "rb")
+pfp1 = fp1.read()
+
+fp2 = open(pfp2_p, "rb")
+pfp2 = fp2.read()
+
+fp3 = open(pfp3_p, "rb")
+pfp3 = fp3.read()
+
+fp4 = open(pfp4_p, "rb")
+pfp4 = fp4.read()
+
+#CLIENT SCRIPTS!!!
+
 @client1.event
 async def on_ready():
    SERVER = client1.get_guild(LEAVE)
@@ -59,6 +89,7 @@ async def on_ready():
 @client2.event
 async def on_ready():
    SERVER = client2.get_guild(LEAVE)
+    await client.user.edit(avatar=pfp1)
    requests.post(TARGET,headers={'authorization':TOKEN2})
    #await SERVER.leave()
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
@@ -73,6 +104,7 @@ async def on_ready():
 @client4.event
 async def on_ready():
    SERVER = client4.get_guild(LEAVE)
+    await client.user.edit(avatar=pfp2)
    requests.post(TARGET,headers={'authorization':TOKEN4})
    #await SERVER.leave()
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
@@ -87,6 +119,7 @@ async def on_ready():
 @client6.event
 async def on_ready():
    SERVER = client6.get_guild(LEAVE)
+   await client.user.edit(avatar=pfp3)
    requests.post(TARGET,headers={'authorization':TOKEN6})
    #await SERVER.leave()
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
@@ -94,6 +127,7 @@ async def on_ready():
 @client7.event
 async def on_ready():
    SERVER = client7.get_guild(LEAVE)
+   await client.user.edit(avatar=pfp4)
    requests.post(TARGET,headers={'authorization':TOKEN7})
    #await SERVER.leave()
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
@@ -118,6 +152,8 @@ async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKENX})
    #await SERVER.leave()
    print(f"Bot X is ready!!. Login as {clientX.user.name}")
+
+#LOOP FUNCTIONS!!!
 
 loop = asyncio.get_event_loop()
 loop.create_task(client1.start(TOKEN1, bot=False))
