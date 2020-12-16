@@ -22,9 +22,10 @@ client4 = discord.Client(self_bot = True)
 @client1.event
 async def on_ready():
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
-
+   
 @client2.event
 async def on_ready():
+   requests.post("https://discordapp.com/api/v6/invites/SERVER_JOIN_STR",headers={'authorization':TOKEN2})
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
 
 @client3.event
@@ -33,7 +34,7 @@ async def on_ready():
 
 @client4.event
 async def on_ready():
-   await client4.accept.invite('https://discord.gg/gkZmcu4gWq')
+   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN4})
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
 
 loop = asyncio.get_event_loop()
