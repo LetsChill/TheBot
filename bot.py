@@ -50,61 +50,61 @@ clientX = discord.Client(self_bot = True)
 @client1.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN1})
-   await client1.leave_server(LEAVE)
+   await client1.leave_guild(LEAVE)
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
    
 @client2.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN2})
-   await client2.leave_server(LEAVE)
+   await client2.leave_guild(LEAVE)
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
 
 @client3.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN3})
-   await client3.leave_server(LEAVE)
+   await client3.leave_guild(LEAVE)
    print(f"Bot 3 is ready!!. Login as {client3.user.name}")
 
 @client4.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN4})
-   await client4.leave_server(LEAVE)
+   await client4.leave_guild(LEAVE)
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
 
 @client5.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN5})
-   await client5.leave_server(LEAVE)
+   await client5.leave_guild(LEAVE)
    print(f"Bot 5 is ready!!. Login as {client5.user.name}")
    
 @client6.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN6})
-   await client6.leave_server(LEAVE)
+   await client6.leave_guild(LEAVE)
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
 
 @client7.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN7})
-   await client7.leave_server(LEAVE)
+   await client7.leave_guild(LEAVE)
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
 
 @client8.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN8})
-   await client8.leave_server(LEAVE)
+   await client8.leave_guild(LEAVE)
    print(f"Bot 8 is ready!!. Login as {client8.user.name}")
 
 @client9.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN9})
-   await client9.leave_server(LEAVE)
+   await client9.leave_guild(LEAVE)
    print(f"Bot 9 is ready!!. Login as {client9.user.name}")
 
 @clientX.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKENX})
-   await clientX.leave_server(LEAVE)
+   await clientX.leave_guild(LEAVE)
    print(f"Bot X is ready!!. Login as {clientX.user.name}")
 
 loop = asyncio.get_event_loop()
