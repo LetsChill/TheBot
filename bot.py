@@ -57,22 +57,22 @@ async def on_ready():
 @client5.event
 async def on_ready():
    requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN5})
-   print(f"Bot 1 is ready!!. Login as {client1.user.name}")
+   print(f"Bot 5 is ready!!. Login as {client5.user.name}")
    
 @client6.event
 async def on_ready():
    requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN6})
-   print(f"Bot 2 is ready!!. Login as {client2.user.name}")
+   print(f"Bot 6 is ready!!. Login as {client6.user.name}")
 
 @client7.event
 async def on_ready():
    requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN7})
-   print(f"Bot 3 is ready!!. Login as {client3.user.name}")
+   print(f"Bot 7 is ready!!. Login as {client7.user.name}")
 
 @client8.event
 async def on_ready():
    requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN8})
-   print(f"Bot 4 is ready!!. Login as {client4.user.name}")
+   print(f"Bot 8 is ready!!. Login as {client8.user.name}")
 
 loop = asyncio.get_event_loop()
 loop.create_task(client1.start(TOKEN1, bot=False))
