@@ -177,35 +177,35 @@ async def on_ready():
 async def on_ready():
    SERVER = client11.get_guild(LEAVE)
    requests.post(TARGET,headers={'authorization':TOKEN11})
-   #await SERVER.leave()
+   await SERVER.leave()
    print(f"Bot 11 is ready!!. Login as {client11.user.name}")
 
 @client12.event
 async def on_ready():
    SERVER = client12.get_guild(LEAVE)
    requests.post(TARGET,headers={'authorization':TOKEN12})
-   #await SERVER.leave()
+   await SERVER.leave()
    print(f"Bot 12 is ready!!. Login as {client12.user.name}")
 
 @client13.event
 async def on_ready():
    SERVER = client13.get_guild(LEAVE)
    requests.post(TARGET,headers={'authorization':TOKEN13})
-   #await SERVER.leave()
+   await SERVER.leave()
    print(f"Bot 13 is ready!!. Login as {client13.user.name}")
 
 @client14.event
 async def on_ready():
    SERVER = client14.get_guild(LEAVE)
    requests.post(TARGET,headers={'authorization':TOKEN14})
-   #await SERVER.leave()
+   await SERVER.leave()
    print(f"Bot 14 is ready!!. Login as {client14.user.name}")
 
 @client15.event
 async def on_ready():
    SERVER = client15.get_guild(LEAVE)
    requests.post(TARGET,headers={'authorization':TOKEN15})
-   #await SERVER.leave()
+   await SERVER.leave()
    print(f"Bot 15 is ready!!. Login as {client15.user.name}")
 
 #LOOP FUNCTIONS!!!
