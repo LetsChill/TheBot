@@ -27,7 +27,7 @@ TOKENX = "Nzg4NjMwNTkwNzYwMDI2MTYy.X9mUTA.zcEYkwRou8gxPJyXkOIxliXcssg"
 
 TARGET = "https://discordapp.com/api/v6/invites/tzf2bV3SmC"
 
-LEAVE = "742618169419628554"
+LEAVE = 742618169419628554
 
 client1 = discord.Client(self_bot = True)
 
@@ -52,7 +52,8 @@ clientX = discord.Client(self_bot = True)
 @client1.event
 async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN1})
-   await client1.get_guild(LEAVE).leave()
+   SERVER = client1.get_guild(LEAVE)
+            await SERVER.leave()
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
    
 @client2.event
