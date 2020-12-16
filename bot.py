@@ -25,7 +25,7 @@ async def on_ready():
    
 @client2.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/SERVER_JOIN_STR",headers={'authorization':TOKEN2})
+   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN2})
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
 
 @client3.event
