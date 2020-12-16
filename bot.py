@@ -57,13 +57,13 @@ clientX = discord.Client(self_bot = True)
 
 #PFP PATHES
 
-pfp1_p = "TheBot/1ECEA55B-AA3B-4FB6-87AE-B1E9B910238E.png"
+pfp1_p = "./1ECEA55B-AA3B-4FB6-87AE-B1E9B910238E.png"
 
-pfp2_p = "TheBot/3847A3D1-A799-4D95-8E79-64F6D252D9CA.jpeg"
+pfp2_p = "./3847A3D1-A799-4D95-8E79-64F6D252D9CA.jpeg"
 
-pfp3_p = "TheBot/6A13666E-9DF8-4BF7-B09E-1C1812F6DA73.jpeg"
+pfp3_p = "./6A13666E-9DF8-4BF7-B09E-1C1812F6DA73.jpeg"
 
-pfp4_p = "TheBot/D6B33B1B-D902-487E-A569-EEE3410ABE04.jpeg"
+pfp4_p = "./D6B33B1B-D902-487E-A569-EEE3410ABE04.jpeg"
 
 fp1 = open(pfp1_p, "rb")
 pfp1 = fp1.read()
@@ -89,7 +89,7 @@ async def on_ready():
 @client2.event
 async def on_ready():
    SERVER = client2.get_guild(LEAVE)
-   await client.user.edit(avatar=pfp1)
+   await client2.user.edit(avatar=pfp1)
    requests.post(TARGET,headers={'authorization':TOKEN2})
    #await SERVER.leave()
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
@@ -104,7 +104,7 @@ async def on_ready():
 @client4.event
 async def on_ready():
    SERVER = client4.get_guild(LEAVE)
-   await client.user.edit(avatar=pfp2)
+   await client4.user.edit(avatar=pfp2)
    requests.post(TARGET,headers={'authorization':TOKEN4})
    #await SERVER.leave()
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
@@ -119,7 +119,7 @@ async def on_ready():
 @client6.event
 async def on_ready():
    SERVER = client6.get_guild(LEAVE)
-   await client.user.edit(avatar=pfp3)
+   await client6.user.edit(avatar=pfp3)
    requests.post(TARGET,headers={'authorization':TOKEN6})
    #await SERVER.leave()
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
@@ -127,7 +127,7 @@ async def on_ready():
 @client7.event
 async def on_ready():
    SERVER = client7.get_guild(LEAVE)
-   await client.user.edit(avatar=pfp4)
+   await client7.user.edit(avatar=pfp4)
    requests.post(TARGET,headers={'authorization':TOKEN7})
    #await SERVER.leave()
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
