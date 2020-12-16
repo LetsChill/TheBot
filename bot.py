@@ -19,6 +19,10 @@ TOKEN7 = "Nzg4NjEzODEyNjk3MzAxMDEy.X9mEfQ.vCY6vl9HJ95zrjc9op4-jvMz-Nw"
 
 TOKEN8 = "Nzg4NjE0ODE3MzA4MjEzMjY5.X9mHgQ.67Q25A9454SPNlKNTl-toLu9chY"
 
+TOKEN9 = "Nzg4NjI5MTU4MTYyMDcxNTU0.X9mSbw.oaIdAsZjarHBeu1ipyivwnfWgUY"
+
+TOKENX = "Nzg4NjMwNTkwNzYwMDI2MTYy.X9mUTA.zcEYkwRou8gxPJyXkOIxliXcssg"
+
 TARGET = "https://discordapp.com/api/v6/invites/yt4Q4CeX"
 
 client1 = discord.Client(self_bot = True)
@@ -37,6 +41,9 @@ client7 = discord.Client(self_bot = True)
 
 client8 = discord.Client(self_bot = True)
 
+client9 = discord.Client(self_bot = True)
+
+clientX = discord.Client(self_bot = True)
 
 @client1.event
 async def on_ready():
@@ -78,6 +85,16 @@ async def on_ready():
    requests.post(TARGET,headers={'authorization':TOKEN8})
    print(f"Bot 8 is ready!!. Login as {client8.user.name}")
 
+@client9.event
+async def on_ready():
+   requests.post(TARGET,headers={'authorization':TOKEN9})
+   print(f"Bot 9 is ready!!. Login as {client9.user.name}")
+
+@clientX.event
+async def on_ready():
+   requests.post(TARGET,headers={'authorization':TOKENX})
+   print(f"Bot X is ready!!. Login as {clientX.user.name}")
+
 loop = asyncio.get_event_loop()
 loop.create_task(client1.start(TOKEN1, bot=False))
 loop.create_task(client2.start(TOKEN2, bot=False))
@@ -88,5 +105,8 @@ loop.create_task(client5.start(TOKEN5, bot=False))
 loop.create_task(client6.start(TOKEN6, bot=False))
 loop.create_task(client7.start(TOKEN7, bot=False))
 loop.create_task(client8.start(TOKEN8, bot=False))
+
+loop.create_task(client9.start(TOKEN9, bot=False))
+loop.create_task(clientX.start(TOKENX, bot=False))
 
 loop.run_forever()
