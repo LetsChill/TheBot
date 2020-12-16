@@ -19,6 +19,8 @@ TOKEN7 = "Nzg4NjEzODEyNjk3MzAxMDEy.X9mEfQ.vCY6vl9HJ95zrjc9op4-jvMz-Nw"
 
 TOKEN8 = "Nzg4NjE0ODE3MzA4MjEzMjY5.X9mHgQ.67Q25A9454SPNlKNTl-toLu9chY"
 
+TARGET = "https://discordapp.com/api/v6/invites/BcD84xX5PH"
+
 client1 = discord.Client(self_bot = True)
 
 client2 = discord.Client(self_bot = True)
@@ -38,40 +40,42 @@ client8 = discord.Client(self_bot = True)
 
 @client1.event
 async def on_ready():
+   requests.post(TARGET,headers={'authorization':TOKEN1})
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
    
 @client2.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN2})
+   requests.post(TARGET,headers={'authorization':TOKEN2})
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
 
 @client3.event
 async def on_ready():
+   requests.post(TARGET,headers={'authorization':TOKEN3})
    print(f"Bot 3 is ready!!. Login as {client3.user.name}")
 
 @client4.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN4})
+   requests.post(TARGET,headers={'authorization':TOKEN4})
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
 
 @client5.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN5})
+   requests.post(TARGET,headers={'authorization':TOKEN5})
    print(f"Bot 5 is ready!!. Login as {client5.user.name}")
    
 @client6.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN6})
+   requests.post(TARGET,headers={'authorization':TOKEN6})
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
 
 @client7.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN7})
+   requests.post(TARGET,headers={'authorization':TOKEN7})
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
 
 @client8.event
 async def on_ready():
-   requests.post("https://discordapp.com/api/v6/invites/gkZmcu4gWq",headers={'authorization':TOKEN8})
+   requests.post(TARGET,headers={'authorization':TOKEN8})
    print(f"Bot 8 is ready!!. Login as {client8.user.name}")
 
 loop = asyncio.get_event_loop()
