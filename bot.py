@@ -89,7 +89,7 @@ async def on_ready():
 @client2.event
 async def on_ready():
    SERVER = client2.get_guild(LEAVE)
-    await client.user.edit(avatar=pfp1)
+   await client.user.edit(avatar=pfp1)
    requests.post(TARGET,headers={'authorization':TOKEN2})
    #await SERVER.leave()
    print(f"Bot 2 is ready!!. Login as {client2.user.name}")
@@ -104,7 +104,7 @@ async def on_ready():
 @client4.event
 async def on_ready():
    SERVER = client4.get_guild(LEAVE)
-    await client.user.edit(avatar=pfp2)
+   await client.user.edit(avatar=pfp2)
    requests.post(TARGET,headers={'authorization':TOKEN4})
    #await SERVER.leave()
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
