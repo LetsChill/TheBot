@@ -23,7 +23,7 @@ TOKEN9 = "Nzg4NjI5MTU4MTYyMDcxNTU0.X9mSbw.oaIdAsZjarHBeu1ipyivwnfWgUY"
 
 TOKENX = "Nzg4NjMwNTkwNzYwMDI2MTYy.X9mUTA.zcEYkwRou8gxPJyXkOIxliXcssg"
 
-TARGET = "https://discordapp.com/api/v6/invites/yt4Q4CeX"
+TARGET = "https://discordapp.com/api/v6/invites/tzf2bV3SmC"
 
 client1 = discord.Client(self_bot = True)
 
