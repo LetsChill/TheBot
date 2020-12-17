@@ -102,7 +102,7 @@ async def on_ready():
 @client4.event
 async def on_ready():
    SERVER = client4.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.idle)
+   await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN4})
    await SERVER.leave()
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
@@ -117,7 +117,7 @@ async def on_ready():
 @client6.event
 async def on_ready():
    SERVER = client6.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.dnd)
+   await client1.change_presence(status=discord.Status.dnd)
    requests.post(TARGET,headers={'authorization':TOKEN6})
    await SERVER.leave()
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
@@ -125,7 +125,7 @@ async def on_ready():
 @client7.event
 async def on_ready():
    SERVER = client7.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.idle)
+   await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN7})
    await SERVER.leave()
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
@@ -140,7 +140,7 @@ async def on_ready():
 @client9.event
 async def on_ready():
    SERVER = client9.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.dnd)
+   await client1.change_presence(status=discord.Status.dnd)
    requests.post(TARGET,headers={'authorization':TOKEN9})
    await SERVER.leave()
    print(f"Bot 9 is ready!!. Login as {client9.user.name}")
@@ -162,7 +162,7 @@ async def on_ready():
 @client12.event
 async def on_ready():
    SERVER = client12.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.idle)
+   await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN12})
    await SERVER.leave()
    print(f"Bot 12 is ready!!. Login as {client12.user.name}")
@@ -177,7 +177,7 @@ async def on_ready():
 @client14.event
 async def on_ready():
    SERVER = client14.get_guild(LEAVE)
-      await client1.change_presence(status=discord.Status.idle)
+   await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN14})
    await SERVER.leave()
    print(f"Bot 14 is ready!!. Login as {client14.user.name}")
