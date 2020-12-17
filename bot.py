@@ -77,7 +77,7 @@ client15 = discord.Client(self_bot = True)
 
 #STATUS DECLARE!!!
 
-Act1 = discord.Activity(name="Test", type=5)
+Act1 = discord.Activity(name="Test", type=4)
 
 #CLIENT SCRIPTS!!!
 
