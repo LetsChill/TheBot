@@ -75,16 +75,12 @@ client14 = discord.Client(self_bot = True)
 
 client15 = discord.Client(self_bot = True)
 
-#STATUS DECLARE!!!
-
-Act1 = discord.Activity(name="Test", type=4)
-
 #CLIENT SCRIPTS!!!
 
 @client1.event
 async def on_ready():
    SERVER = client1.get_guild(LEAVE)
-   await client1.change_presence(status=discord.Status.idle, activity=Act1)
+   await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN1})
    await SERVER.leave()
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
