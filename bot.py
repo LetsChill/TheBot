@@ -47,9 +47,31 @@ TOKEN19 = "Nzg4OTczOTE5NDIzNjkyODEx.X9rTjQ._T5kN71dkjiF2AmhX_yYr87IjCI"
 
 TOKEN20 = "Nzg4OTc0Njg4OTM5OTMzNzE3.X9rUMA.vh8QSc5xzcc6TUt0JE9s_Sk5aTM"
 
+TOKEN21 = "Nzg4NjQ2MzgxMzkxODM5MjMz.X9miYA.WLH5VRq0o6ojE-2M8rnQiMpdEeE"
+
+TOKEN22 = "Nzg4NjQ3MTAwNDgwMzU2MzUy.X9mjDQ.ll9lBP1zFgWnmV-aSL_OXWfmYtU"
+
+TOKEN23 = "Nzg4NjQ4Mjc5MjA2Mzk1OTY0.X9mkJA.i_bO-4h65auePb9Vu6CC-pGVqIU"
+
+TOKEN24 = "Nzg4NjQ4ODQxMTc0OTc0NDk0.X9mkyA.cQnw2isCvw9eNabOmMAN8IrskwU"
+
+TOKEN25 = "Nzg4NjY1NTg2MjEyNTM2MzUw.X9m0bQ.Xhdlz1hLDi2dv8J9mMJq1uQVEXY"
+
+TOKEN26 = "Nzg4NjY2Mzc4NzIyNDc2MDYy.X9m0_w.kAaak-8_FtT7TtkPDZMfE225nJg"
+
+TOKEN27 = "Nzg4NjY2OTI3MjIzNjY4NzM3.X9m1nA.Um-hnVagzud9cIoN8I2XmwFQBRI"
+
+TOKEN28 = "Nzg4NjY4NjkzNjIxNTA2MDg4.X9m3Nw.j8Xb5nhcIk9kNh0KdRPxuMxzc2o"
+
+TOKEN29 = "Nzg4NjY5NDM5NjUwMTY4ODQy.X9m31A.ZRRvSjMCqjq3BqayJCVwwDX9wzc"
+
+TOKEN30 = "Nzg4NjgyMDY3NDk0OTYxMjIy.X9nD9w._awWq0NSxF9yNtxXntQWYxvcB9A"
+
+
+
 #JOINER, LEAVER!!!
 
-TARGET = "https://discordapp.com/api/v6/invites/sJ2jSnUR"
+TARGET = "https://discordapp.com/api/v6/invites/n5C3Uqmj8U"
 
 LEAVE = 784444505625329704
 
@@ -94,6 +116,26 @@ client18 = discord.Client(self_bot = True)
 client19 = discord.Client(self_bot = True)
 
 client20 = discord.Client(self_bot = True)
+
+client21 = discord.Client(self_bot = True)
+
+client22 = discord.Client(self_bot = True)
+
+client23 = discord.Client(self_bot = True)
+
+client24 = discord.Client(self_bot = True)
+
+client25 = discord.Client(self_bot = True)
+
+client26 = discord.Client(self_bot = True)
+
+client27 = discord.Client(self_bot = True)
+
+client28 = discord.Client(self_bot = True)
+
+client29 = discord.Client(self_bot = True)
+
+client30 = discord.Client(self_bot = True)
 
 #CLIENT SCRIPTS!!!
 
@@ -246,6 +288,80 @@ async def on_ready():
    await SERVER.leave()
    print(f"Bot 20 is ready!!. Login as {client20.user.name}")
 
+@client21.event
+async def on_ready():
+   SERVER = client21.get_guild(LEAVE)
+   await client21.change_presence(status=discord.Status.idle)
+   requests.post(TARGET,headers={'authorization':TOKEN21})
+   await SERVER.leave()
+   print(f"Bot 21 is ready!!. Login as {client21.user.name}")
+
+@client22.event
+async def on_ready():
+   SERVER = client22.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN22})
+   await SERVER.leave()
+   print(f"Bot 22 is ready!!. Login as {client22.user.name}")
+
+@client23.event
+async def on_ready():
+   SERVER = client23.get_guild(LEAVE)
+   await client23.change_presence(status=discord.Status.idle)
+   requests.post(TARGET,headers={'authorization':TOKEN23})
+   await SERVER.leave()
+   print(f"Bot 23 is ready!!. Login as {client23.user.name}")
+
+@client24.event
+async def on_ready():
+   SERVER = client24.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN24})
+   await SERVER.leave()
+   print(f"Bot 24 is ready!!. Login as {client24.user.name}")
+
+@client25.event
+async def on_ready():
+   SERVER = client25.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN25})
+   await SERVER.leave()
+   print(f"Bot 25 is ready!!. Login as {client25.user.name}")
+
+@client26.event
+async def on_ready():
+   SERVER = client26.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN26})
+   await SERVER.leave()
+   print(f"Bot 26 is ready!!. Login as {client26.user.name}")
+
+@client27.event
+async def on_ready():
+   SERVER = client27.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN27})
+   await SERVER.leave()
+   print(f"Bot 27 is ready!!. Login as {client27.user.name}")
+
+@client28.event
+async def on_ready():
+   SERVER = client28.get_guild(LEAVE)
+   await client28.change_presence(status=discord.Status.idle)
+   requests.post(TARGET,headers={'authorization':TOKEN28})
+   await SERVER.leave()
+   print(f"Bot 28 is ready!!. Login as {client28.user.name}")
+
+@client29.event
+async def on_ready():
+   SERVER = client29.get_guild(LEAVE)
+   requests.post(TARGET,headers={'authorization':TOKEN29})
+   await SERVER.leave()
+   print(f"Bot 29 is ready!!. Login as {client29.user.name}")
+
+@client30.event
+async def on_ready():
+   SERVER = client30.get_guild(LEAVE)
+   await client30.change_presence(status=discord.Status.dnd)
+   requests.post(TARGET,headers={'authorization':TOKEN30})
+   await SERVER.leave()
+   print(f"Bot 30 is ready!!. Login as {client30.user.name}")
+
 #LOOP FUNCTIONS!!!
 
 loop = asyncio.get_event_loop()
@@ -273,5 +389,16 @@ loop.create_task(client17.start(TOKEN17, bot=False))
 loop.create_task(client18.start(TOKEN18, bot=False))
 loop.create_task(client19.start(TOKEN19, bot=False))
 loop.create_task(client20.start(TOKEN20, bot=False))
+
+loop.create_task(client21.start(TOKEN21, bot=False))
+loop.create_task(client22.start(TOKEN22, bot=False))
+loop.create_task(client23.start(TOKEN23, bot=False))
+loop.create_task(client24.start(TOKEN24, bot=False))
+loop.create_task(client25.start(TOKEN25, bot=False))
+loop.create_task(client26.start(TOKEN26, bot=False))
+loop.create_task(client27.start(TOKEN27, bot=False))
+loop.create_task(client28.start(TOKEN28, bot=False))
+loop.create_task(client29.start(TOKEN29, bot=False))
+loop.create_task(client30.start(TOKEN30, bot=False))
 
 loop.run_forever()
