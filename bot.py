@@ -49,7 +49,7 @@ TOKEN20 = "Nzg4OTc0Njg4OTM5OTMzNzE3.X9rUMA.vh8QSc5xzcc6TUt0JE9s_Sk5aTM"
 
 #JOINER, LEAVER!!!
 
-TARGET = "https://discordapp.com/api/v6/invites/gkZmcu4gWq"
+TARGET = "https://discordapp.com/api/v6/invites/sJ2jSnUR"
 
 LEAVE = 784444505625329704
 
