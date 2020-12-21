@@ -7,7 +7,7 @@ from discord.utils import get
 
 #TOKEN HOLDER!!!
 
-TOKEN1 = "Nzc2MDQ5MzMxNjI3MDk4MTQz.X9g9kQ.gqOtml38QCN09pIw9Mjb5mJvb-Y"
+TOKEN1 = "Nzc2MDQ5MzMxNjI3MDk4MTQz.X-AtWA.Q0Hw-zQjeNzhnma_35MB9jll4eI"
 
 TOKEN2 = "Nzg4OTgyMTUzODAzMDcxNTA5.X9uoSA.e5ydIzmuceF5zPXaN4Fnl8v0uZU"
 
