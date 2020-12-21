@@ -144,7 +144,14 @@ async def on_ready():
    SERVER = client1.get_guild(LEAVE)
    await client1.change_presence(status=discord.Status.idle)
    requests.post(TARGET,headers={'authorization':TOKEN1})
-   await SERVER.leave()
+   try:
+      await SERVER.leave()
+
+   except Exception:
+        pass
+
+   print("failed to leave server...")
+
    print(f"Bot 1 is ready!!. Login as {client1.user.name}")
    
 @client2.event
