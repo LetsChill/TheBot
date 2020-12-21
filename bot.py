@@ -71,7 +71,7 @@ TOKEN30 = "Nzg4NjgyMDY3NDk0OTYxMjIy.X9nD9w._awWq0NSxF9yNtxXntQWYxvcB9A"
 
 #JOINER, LEAVER!!!
 
-TARGET = "https://discordapp.com/api/v6/invites/Npd56TMr"
+TARGET = "https://discordapp.com/api/v6/invites/https://discord.gg/A5S6rnFr"
 
 LEAVE = 7843901945
 
