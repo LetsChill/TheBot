@@ -147,7 +147,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except AttributeError:
         pass
 
    print("failed to leave server...")
@@ -161,7 +161,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print("failed to leave server...")
@@ -175,7 +175,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print("failed to leave server...")
@@ -191,7 +191,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 4 is ready!!. Login as {client4.user.name}")
@@ -203,7 +203,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 5 is ready!!. Login as {client5.user.name}")
@@ -216,7 +216,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 6 is ready!!. Login as {client6.user.name}")
@@ -229,7 +229,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 7 is ready!!. Login as {client7.user.name}")
@@ -241,7 +241,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 8 is ready!!. Login as {client8.user.name}")
@@ -254,7 +254,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot 9 is ready!!. Login as {client9.user.name}")
@@ -266,7 +266,7 @@ async def on_ready():
    try:
       await SERVER.leave()
 
-   except Exception:
+   except attributeerror:
         pass
 
    print(f"Bot X is ready!!. Login as {clientX.user.name}")
