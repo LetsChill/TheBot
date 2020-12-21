@@ -1,6 +1,6 @@
 import discord
 
-client = discord.Client()
+client = discord.Client(self_bot = True)
 
 TOKEN = "NTEzMzUxOTE3NDgxNjIzNTcy.X-A8YA.VqQg4sPCwuph4oCctg-NTGhfYHA"
 
@@ -11,4 +11,4 @@ async def on_ready():
     await client.change_presence(status=discord.Status.idle, activity=activity)
     print(f"ready! {client.user.name}")
 
-client.run(TOKEN)
+client.run(TOKEN, bot=False)
