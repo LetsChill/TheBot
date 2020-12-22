@@ -24,7 +24,7 @@ class Logging(commands.Cog):
             guild.me: discord.PermissionOverwrite(read_messages=True),
             admin_role: discord.PermissionOverwrite(read_messages=True)
         }
-        category = await guild.create_category("logs", overwrites=otherwrites, reason=None)
+        category = await guild.create_category("logs", overwrites=overwrites, reason=None)
         channel = await guild.create_text_channel('message-logs', overwrites=overwrites, category=category)
 
 
