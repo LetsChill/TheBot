@@ -8,7 +8,7 @@ class Moderator(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-
+    @commands.command()
 
     @commands.command()
     @commands.has_any_role("clear perms", "Admin")
@@ -62,8 +62,8 @@ class Moderator(commands.Cog):
         embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
         embhelp.add_field(name="remove", value="?remove [order number in the queue], to remove any playlist from the queue", inline=True)
-        embhelp.add_field(name="donate", value="Make my Day amazing and buy me a cake!", inline=True)
-        embhelp.add_field(name="Lost?", value="Join our server! https://discord.gg/ZrktueCZWF", inline=True)
+        embhelp.add_field(name="setup", value="server owner and admin only!, set up the logging system!", inline=True)
+        embhelp.add_field(name="Lost?", value="Join our server! https://invite.subaru.cf/", inline=True)
         embhelp.set_footer(text="Bot Coding by LetsChill#0001")
         await context.send(embed=embhelp)
         
