@@ -7,9 +7,6 @@ import datetime
 import asyncio
 import random
 
-import flask
-import keep_alive
-
 from discord.ext import commands
 from discord.utils import get
 
@@ -24,6 +21,5 @@ async def on_ready():
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
-       
-keep_alive.keep_alive()
+
 client.run("NzcyODk0NzQxNTgyNzA4Nzc4.X6BUUg.bPUU5aXbibEDEZl8JQ1cs_DqmsY")
