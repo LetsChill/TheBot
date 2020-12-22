@@ -1,2 +1,2 @@
 worker: python bot.py
-worker2: python mine.py
+worker2: python main.py
