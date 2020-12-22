@@ -8,7 +8,6 @@ class Moderator(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-    @commands.command()
 
     @commands.command()
     @commands.has_any_role("clear perms", "Admin")
