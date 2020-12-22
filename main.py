@@ -11,7 +11,7 @@ from discord.ext import commands
 from discord.utils import get
 
 intents = discord.Intents().all()
-client = commands.AutoShardedBot(command_prefix=":", intents=intents, help_command=None)
+client = commands.AutoShardedBot(command_prefix=[":","<@772894741582708778>"]), intents=intents, help_command=None)
 	
 @client.event
 async def on_ready():
