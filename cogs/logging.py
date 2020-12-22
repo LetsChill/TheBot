@@ -19,7 +19,7 @@ class Logging(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-    await ctx.send('Pong! {0}'.format(round(self.client.latency, 1)))
+        await ctx.send('Pong! {0}'.format(round(self.client.latency, 1)))
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
