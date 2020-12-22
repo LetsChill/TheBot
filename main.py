@@ -15,7 +15,7 @@ client = commands.AutoShardedBot(command_prefix=[":","<@772894741582708778>"], i
 	
 @client.event
 async def on_ready():
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Humans, :help"))
+     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(bot.guilds)} , :help"))
      print(f"Bot Is Up {client.user.name}")
                         
 for filename in os.listdir('./cogs'):
