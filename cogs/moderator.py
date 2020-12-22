@@ -57,7 +57,7 @@ class Moderator(commands.Cog):
         embhelp.add_field(name="help", value="Shows commands availble", inline=False)
         embhelp.add_field(name="play", value="?play [url] or ?play [search engine]", inline=True)
         embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
-        embhelp.add_field(name="join", value="join a voice channel with [ID] of the channel", inline=True)
+        embhelp.add_field(name="join", value="join a voice channel of the channel", inline=True)
         embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
         embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
         embhelp.add_field(name="remove", value="?remove [order number in the queue], to remove any playlist from the queue", inline=True)
