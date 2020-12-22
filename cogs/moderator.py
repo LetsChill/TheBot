@@ -63,7 +63,8 @@ class Moderator(commands.Cog):
         embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
         embhelp.add_field(name="remove", value="?remove [order number in the queue], to remove any playlist from the queue", inline=True)
         embhelp.add_field(name="donate", value="Make my Day amazing and buy me a cake!", inline=True)
-        embhelp.set_footer(text="Bot Coding by HАJякя#2483")
+        embhelp.add_field(name="Lost?", value="Join our server! https://discord.gg/ZrktueCZWF", inline=True)
+        embhelp.set_footer(text="Bot Coding by LetsChill#0001")
         await context.send(embed=embhelp)
         
         
