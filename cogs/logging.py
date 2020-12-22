@@ -15,8 +15,7 @@ class Logging(commands.Cog):
 
     @commands.command()
     async def setup(ctx):
-        await ctx.send("To setup the logging system, create 3 channels with the names: **member-logs**, **message-logs** and **mod-logs**
-
+        await ctx.send("To setup the logging system, create 3 channels with the names: **member-logs**, **message-logs** and **mod-logs**")
 
 
     @commands.Cog.listener()
