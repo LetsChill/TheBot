@@ -13,17 +13,7 @@ class Logging(commands.Cog):
         self.client = client
     
 
-    @commands.command()
-    async def make_channel(self, ctx):
-        ctx.send("besure you have an role called @Moderator, that role can access the logs, you can change it later!")
-        guild = ctx.guild
-        admin_role = get(guild.roles, name="Moderator")
-        overwrites = {
-            guild.default_role: discord.PermissionOverwrite(read_messages=False),
-            admin_role: discord.PermissionOverwrite(read_messages=True)
-        }
-        category = await guild.create_category("logs", overwrites=overwrites, reason=None)
-        channel = await guild.create_text_channel('message-logs', overwrites=overwrites, category=category)
+    
 
 
 
