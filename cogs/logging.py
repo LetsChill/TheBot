@@ -62,10 +62,7 @@ class Logging(commands.Cog):
         embmsg.set_author(name="Subaru")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
         channel = discord.utils.get(guild.channels, name='member-logs')
-        channel2 = discord.utils.get(guild.channels, name='welcome')
-        channel3 = self.client.get.channel(790896086243737600)
         await channel.send(embed=embmsg)
-        await channel3.send(f"Hello **{member.mention}**!!! Welcome to our server, please Check out **<#790896790257795092>**")
 
 
 
