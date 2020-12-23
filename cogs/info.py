@@ -34,7 +34,7 @@ class Info(commands.Cog):
 
 
     @commands.command()
-    async def help(self, context, arg1):
+    async def help(self, error, context, arg1):
          if arg1 == "music":
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
@@ -61,7 +61,7 @@ class Info(commands.Cog):
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
               await context.send(embed=embhelp2)
 
-         elif arg1 == None:
+         elif isinstance(error, discord.ext.commands.BadArgument):
               embhelp3=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
