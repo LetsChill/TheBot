@@ -34,8 +34,8 @@ class Info(commands.Cog):
 
 
     @commands.command()
-    async def help(self, pass_context=True):
-         if context == "music":
+    async def help(self, context, arg1):
+         if arg1 == "music":
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
@@ -51,7 +51,7 @@ class Info(commands.Cog):
               embhelp.set_footer(text="Bot Coding by HАJякя#2483")
               await context.send(embed=embhelp)
 
-         elif context == "mod":
+         elif arg1 == "mod":
               embhelp2=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
@@ -61,7 +61,7 @@ class Info(commands.Cog):
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
               await context.send(embed=embhelp2)
 
-         elif context == None:
+         elif arg1 == None:
               embhelp3=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
