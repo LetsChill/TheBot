@@ -32,7 +32,7 @@ class Logging(commands.Cog):
         embed.set_author(name=f'{before.author.name} {before.author.discriminator}', icon_url=before.author.avatar_url)
         embed.set_footer(text=f"Author ID:{before.author.id} • Message ID: {before.id}")
         embed.add_field(name=f'User: ', value=f'{before.author.mention}', inline=False)
-        embed.add_field(name='Before:', value=f"{before.content}, inline=False)
+        embed.add_field(name='Before:', value=f"{before.content}", inline=False)
         embed.add_field(name="After:", value=f"{after.content}", inline=False)
         channel = discord.utils.get(guild.channels, name='message-logs')
         await channel.send(embed=embed)
