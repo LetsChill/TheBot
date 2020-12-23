@@ -57,6 +57,7 @@ class Info(commands.Cog):
               embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members, if its above staff, it can kick them!", inline=True)
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
               embhelp2.add_field(name="clear", value="clear [number], bulk delete messages, set to 1 by default", inline=True)
+              await ctx.send(embed=embhelp2)
 
          elif arg1 == None:
               embhelp3=discord.Embed(
