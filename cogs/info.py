@@ -46,8 +46,6 @@ class Info(commands.Cog):
               embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
               embhelp.add_field(name="queue", value="shows tye queue of songs will be played in future", inline=True)
               embhelp.add_field(name="remove", value="remove [order number in the queue], to remove any playlist from the queue", inline=True)
-              embhelp.add_field(name="", value="", inline=True)
-              embhelp.set_footer(text="Bot Coding by HАJякя#2483")
               await ctx.send(embed=embhelp)
 
          elif arg1 == "mod":
@@ -67,6 +65,7 @@ class Info(commands.Cog):
               embhelp3.set_author(name="Subary Bot 2.0v, prefix is :")
               embhelp3.add_field(name="help Music", value="Music commands help!", inline=False)
               embhelp3.add_field(name="help mod", value="Moderation commands help!", inline=False)
+              embhelp3.set_footer(text="Bot Coding by LetsChill#0001")
               await ctx.send(embed=embhelp3)
 
          else:
