@@ -39,7 +39,7 @@ class Info(commands.Cog):
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
-              embhelp.set_author(name="Subary Bot 2.0v, *prefix is* :")
+              embhelp.set_author(name="Subary Bot 2.0v, prefix is :")
               embhelp.add_field(name="play", value="play [url] or play [search engine]", inline=True)
               embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
               embhelp.add_field(name="join", value="join a voice channel with [ID] of the channel", inline=True)
@@ -54,7 +54,7 @@ class Info(commands.Cog):
               embhelp2=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
-              embhelp2.set_author(name="Costum Bot 1.1v, *prefix is :")
+              embhelp2.set_author(name="Costum Bot 1.1v, prefix is :")
               embhelp2.add_field(name="setup", value="How to setup logging!", inline=False)
               embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members, if its above staff, it can kick them!", inline=True)
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
