@@ -60,5 +60,15 @@ class Info(commands.Cog):
         embdon.add_field(name="Cripto/bitcoins", value="https://donate.subaru.cf/", inline=True)
         await context.send(embed=embdon)
 
+    @commands.command()
+    async def invite(self, context):
+        embdon=discord.Embed(
+        title="Invite me? Or join our support server!", description=":)", color=0x7a219e 
+        )
+        embdon.set_author(name="Invites")
+        embdon.add_field(name="Invite me!", value="https://discord.subaru.cf/", inline=False)
+        embdon.add_field(name="Support Server!", value="https://invite.subaru.cf/", inline=True)
+        await context.send(embed=embdon)
+
 def setup(client):
     client.add_cog(Info(client))
