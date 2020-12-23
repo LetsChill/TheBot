@@ -10,7 +10,7 @@ class Info(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def serverinfo(ctx):
+    async def serverinfo(self, ctx):
         name = str(ctx.guild.name)
         description = str(ctx.guild.description)
 
