@@ -34,7 +34,7 @@ class Info(commands.Cog):
 
 
     @commands.command()
-    async def help(self, ctx, arg1: None):
+    async def help(self, ctx, arg1: str = None):
          if arg1 == "music":
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
