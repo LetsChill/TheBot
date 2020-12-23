@@ -56,9 +56,9 @@ class Info(commands.Cog):
         embdon=discord.Embed(
         title="Ways to donate!", description=":)", color=0x7a219e 
         )
-        embhelp.set_author(name="Donate To LetsChill")
-        embhelp.add_field(name="Patreon!", value="http://patreon.com/LetsChill", inline=False)
-        embhelp.add_field(name="Cripto/bitcoins", value="https://donate.subaru.cf/", inline=True)
+        embdon.set_author(name="Donate To LetsChill")
+        embdon.add_field(name="Patreon!", value="http://patreon.com/LetsChill", inline=False)
+        embdon.add_field(name="Cripto/bitcoins", value="https://donate.subaru.cf/", inline=True)
         await context.send(embed=embdon)
 
 def setup(client):
