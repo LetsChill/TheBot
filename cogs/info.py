@@ -34,7 +34,7 @@ class Info(commands.Cog):
 
 
     @commands.command()
-    async def help(self, error, context, arg1):
+    async def help(self, ctx, arg1):
          if arg1 == "music":
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
@@ -49,7 +49,7 @@ class Info(commands.Cog):
               embhelp.add_field(name="remove", value="remove [order number in the queue], to remove any playlist from the queue", inline=True)
               embhelp.add_field(name="", value="Make my Day amazing and buy me a cake!", inline=True)
               embhelp.set_footer(text="Bot Coding by HАJякя#2483")
-              await context.send(embed=embhelp)
+              await ctx.send(embed=embhelp)
 
          elif arg1 == "mod":
               embhelp2=discord.Embed(
@@ -59,21 +59,21 @@ class Info(commands.Cog):
               embhelp2.add_field(name="setup", value="How to setup logging!", inline=False)
               embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members, if its above staff, it can kick them!", inline=True)
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
-              await context.send(embed=embhelp2)
+              await ctx.send(embed=embhelp2)
 
-         elif isinstance(error, discord.ext.commands.BadArgument):
+         elif isinstance(error, discord.ext.commands.MissingRequiredArgument):
               embhelp3=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
               embhelp3.set_author(name="Costum Bot 1.1v, *prefix is :")
               embhelp3.add_field(name="help Music", value="Music commands help!", inline=False)
               embhelp3.add_field(name="help mod", value="Moderation commands help!", inline=False)
-              await context.send(embed=embhelp3)
+              await ctx.send(embed=embhelp3)
          else:
               embhelp4=discord.Embed(
               title="invalid Argument", description="Invalid Argument was passed", color=0x7a219e
               )
-              await context.send(embed=embhelp4)
+              await ctx.send(embed=embhelp4)
 
     @commands.command()
     async def donate(self, context):
