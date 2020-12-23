@@ -51,8 +51,15 @@ class Info(commands.Cog):
         embhelp.set_footer(text="Bot Coding by HАJякя#2483")
         await context.send(embed=embhelp)
 
-
-
+    @commands.command()
+    async def donate(self, context):
+        embdon=discord.Embed(
+        title="Ways to donate!", description=":)", color=0x7a219e 
+        )
+        embhelp.set_author(name="Donate To LetsChill")
+        embhelp.add_field(name="Patreon!", value="http://patreon.com/LetsChill", inline=False)
+        embhelp.add_field(name="Cripto/bitcoins", value="https://donate.subaru.cf/", inline=True)
+        await context.send(embed=embdon)
 
 def setup(client):
     client.add_cog(Info(client))
