@@ -34,8 +34,8 @@ class Info(commands.Cog):
 
 
     @commands.command()
-    async def help(self, context, arg1):
-        if arg1 = "music"
+    async def help(self, pass_context=True):
+        if context = "music"
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
@@ -51,7 +51,7 @@ class Info(commands.Cog):
               embhelp.set_footer(text="Bot Coding by HАJякя#2483")
               await context.send(embed=embhelp)
 
-          elif arg1 = "mod"
+          elif context = "mod"
               embhelp2=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
