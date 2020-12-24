@@ -6,7 +6,7 @@ start_time = time.time()
 
 
 class Uptime:
-    def __init__(self, bot):
+    def __init__(self, client):
         self.client = client
 
     @commands.command(pass_context=True)
