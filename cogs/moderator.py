@@ -33,7 +33,7 @@ class Moderator(commands.Cog):
             await context.send('User ' + member.mention + ' has been kicked')
             await channel.send(embed=kickembed)
 
-       else:
+        else:
             context.send("you cant kick a mod?")
     @commands.command()
     @commands.has_permissions(ban_members=True)
