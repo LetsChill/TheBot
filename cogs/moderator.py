@@ -26,11 +26,11 @@ class Moderator(commands.Cog):
        kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
        kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
        channel = discord.utils.get(guild.channels, name='mod-logs')
-      await member.kick()
+       await member.kick()
                 
         
-      await context.send('User ' + member.mention + ' has been kicked')
-      await channel.send(embed=kickembed)
+       await context.send('User ' + member.mention + ' has been kicked')
+       await channel.send(embed=kickembed)
 
 
 
