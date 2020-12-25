@@ -19,7 +19,7 @@ class Moderator(commands.Cog):
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def kick(self, context, member: discord.Member):
-       if member.guild_permissions.kick_members:
+       if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
             await context.send("You cant kick A mod/admin")
        else:
             guild = context.guild
@@ -40,7 +40,7 @@ class Moderator(commands.Cog):
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def ban(self, context, member: discord.Member):
-       if member.guild_permissions.ban_members:
+       if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
             await context.send("you cant ban a mod/admin")
        else:
             guild = context.guild
