@@ -20,7 +20,7 @@ class Moderator(commands.Cog):
     @commands.has_permissions(kick_members=True)
     async def kick(self, context, member: discord.Member):
        if member.guild_permissions.kick_members:
-            context.send("You cant kick A mod/admin")
+           await context.send("You cant kick A mod/admin")
        else:
             guild = context.guild
             kickembed = discord.Embed(
