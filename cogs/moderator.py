@@ -19,7 +19,7 @@ class Moderator(commands.Cog):
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def kick(self, context, member: discord.Member):
-        if context.author.kick_members:
+        if member.kick_members:
             guild = context.guild
             kickembed = discord.Embed(
             title='User kicked:', color=0x982abc
