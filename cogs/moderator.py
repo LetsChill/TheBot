@@ -20,6 +20,9 @@ class Moderator(commands.Cog):
     @commands.has_permissions(kick_members=True)
     async def kick(self, context, member: discord.Member):
         if member.kick_members:
+            context.send("i Cant kick a moderator/admin!")
+
+        else:
             guild = context.guild
             kickembed = discord.Embed(
             title='User kicked:', color=0x982abc
@@ -33,8 +36,8 @@ class Moderator(commands.Cog):
             await context.send('User ' + member.mention + ' has been kicked')
             await channel.send(embed=kickembed)
 
-        else:
-            context.send("you cant kick a mod?")
+
+
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def ban(self, context, member: discord.Member):
