@@ -54,8 +54,8 @@ class Info(commands.Cog):
               )
               embhelp2.set_author(name="Costum Bot 1.1v, prefix is :")
               embhelp2.add_field(name="setup", value="How to setup logging!", inline=False)
-              embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members, if its above staff, it can kick them!", inline=True)
-              embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members, if its above staff, it can ban them!", inline=True)
+              embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members.", inline=True)
+              embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members.", inline=True)
               embhelp2.add_field(name="clear", value="clear [number], bulk delete messages, set to 1 by default", inline=True)
               await ctx.send(embed=embhelp2)
 
@@ -66,6 +66,8 @@ class Info(commands.Cog):
               embhelp3.set_author(name="Subary Bot 2.0v, prefix is :")
               embhelp3.add_field(name="help Music", value="Music commands help!", inline=False)
               embhelp3.add_field(name="help mod", value="Moderation commands help!", inline=False)
+              embhelp3.add_field(name="donate", value="How can you donate!", inline=False)
+              embhelp3.add_field(name="invite", value="Invite me!, or other stuff", inline=False)
               embhelp3.set_footer(text="Bot Coding by LetsChill#0001")
               await ctx.send(embed=embhelp3)
 
@@ -92,6 +94,7 @@ class Info(commands.Cog):
         )
         embdon.set_author(name="Invites")
         embdon.add_field(name="Invite me!", value="https://discord.subaru.cf/", inline=False)
+        embdon.add_field(name="Official Site!", value="https://subaru.cf/", inline=False)
         embdon.add_field(name="Support Server!", value="https://invite.subaru.cf/", inline=True)
         await context.send(embed=embdon)
 
