@@ -26,7 +26,7 @@ class Moderator(commands.Cog):
             kickembed = discord.Embed(
             title='User kicked:', color=0x982abc
             )
-            kickembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
+            kickembed.set_author(name="Subary")
             kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
             channel = discord.utils.get(guild.channels, name='mod-logs')
             await member.kick()
@@ -47,13 +47,35 @@ class Moderator(commands.Cog):
             banembed = discord.Embed(
             title='User banned:', color=0x982abc
             )
-            banembed.set_author(name="WonderBot", icon_url=" https://cdn.discordapp.com/avatars/772894741582708778/db69e1a3b55e924eaf79dd3bccedebd7.png?size=128 ")
+            banembed.set_author(name="Subary")
             banembed.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
             channel = discord.utils.get(guild.channels, name='mod-logs')
             await member.ban()
     
             await context.send('User ' + member.mention + ' has been banned')
             await channel.send(embed=banembed)
+
+
+    @commands.command()
+    @commands.has_permissions(ban_members=True)
+    async def softban(self, context, member: discord.Member):
+       if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
+            await context.send("you cant soft ban a mod/admin")
+       else:
+            guild = context.guild
+            banembed = discord.Embed(
+            title='User soft banned:', color=0x982abc
+            )
+            banembed.set_author(name="Subary")
+            banembed.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
+            channel = discord.utils.get(guild.channels, name='mod-logs')
+            await member.ban()
+            await member.unban()
+    
+            await context.send('User ' + member.mention + ' has been soft banned')
+            await channel.send(embed=banembed)
+
+
 
     @commands.command()
     async def setdelay(self, ctx, seconds: int):
