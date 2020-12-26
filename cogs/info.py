@@ -42,10 +42,12 @@ class Info(commands.Cog):
               embhelp.set_author(name="Subary Bot 2.0v, prefix is -")
               embhelp.add_field(name="play", value="play [url] or play [search engine]", inline=True)
               embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
-              embhelp.add_field(name="join", value="join a voice channel with [ID] of the channel", inline=True)
+              embhelp.add_field(name="pause", value="Stops the bot from playing music", inline=True)
+              embhelp.add_field(name="join", value="join a voice channel / summons the bot!", inline=True)
               embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
               embhelp.add_field(name="queue", value="shows the queue of songs will be played in future", inline=True)
-              embhelp.add_field(name="remove", value="remove [order number in the queue], to remove any playlist from the queue", inline=True)
+              embhelp.add_field(name="remove", value="remove [order number in the queue], to remove the Targeted song", inline=True)
+              embhelp.add_field(name="np", value="Stands for (now playing), responds with the music is being played.", inline=True)
               await ctx.send(embed=embhelp)
 
          elif arg1 == "mod":
