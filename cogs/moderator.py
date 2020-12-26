@@ -58,8 +58,15 @@ class Moderator(commands.Cog):
     @commands.command()
     async def setdelay(self, ctx, seconds: int):
        if ctx.author.guild_permissions.manage_channels:
+              guild = ctx.guild
+              Delemb = discord.Embed(
+              title='Channel delay set:', color=0x982abc
+              )
+              banembed.add_field(name=f'Moderator: {ctx.author.mention} ', value=f"Delay set To {seconds} seconds", inline=False)
+              channel = discord.utils.get(guild.channels, name='mod-logs')
               await ctx.channel.edit(slowmode_delay=seconds)
               await ctx.send(f"Set the slowmode delay in this channel to {seconds} seconds!")
+              await channel.send(embed=Delemb)
        else:
               await ctx.send("You dont Have Permission for that!")
 
