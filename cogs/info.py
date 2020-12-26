@@ -57,7 +57,7 @@ class Info(commands.Cog):
               embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members.", inline=True)
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members.", inline=True)
               embhelp2.add_field(name="clear", value="clear [number], bulk delete messages, set to 1 by default", inline=True)
-              embhelp2.add_field(name="setdelay", value"set channel slow mode to lower numbers, only people with manage channels permissions can do that!", inline=True)
+              embhelp2.add_field(name="setdelay", value="set channel slow mode to lower numbers, only people with manage channels permissions can do that!", inline=True)
               await ctx.send(embed=embhelp2)
 
          elif arg1 == None:
