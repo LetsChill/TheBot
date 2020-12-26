@@ -57,7 +57,7 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def setdelay(self, ctx, seconds: int):
-       if ctx.author.guild_permissions.manage_channels
+       if ctx.author.guild_permissions.manage_channels:
               await ctx.channel.edit(slowmode_delay=seconds)
               await ctx.send(f"Set the slowmode delay in this channel to {seconds} seconds!")
        else:
