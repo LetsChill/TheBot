@@ -47,7 +47,8 @@ class Music(commands.Cog):
     async def stop(self, ctx):
         player = music.get_player(guild_id=ctx.guild.id)
         await player.stop()
-        await ctx.send("Stopped, and deleted all queue.")
+        await ctx.voice_client.disconnect()
+        await ctx.send("Stopped, leaved, and deleted all queue.")
 
     @commands.command()
     async def loop(self, ctx):
