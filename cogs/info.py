@@ -47,6 +47,7 @@ class Info(commands.Cog):
               embhelp.add_field(name="leave", value="makes the bot leaves the channel", inline=True)
               embhelp.add_field(name="queue", value="shows the queue of songs will be played in future", inline=True)
               embhelp.add_field(name="remove", value="remove [order number in the queue], to remove the Targeted song", inline=True)
+              embhelp.add_field(name="skip", value="Skip from the the song playing to the next song in queue", inline=True)
               embhelp.add_field(name="np", value="Stands for (now playing), responds with the music is being played.", inline=True)
               await ctx.send(embed=embhelp)
 
