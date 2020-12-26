@@ -55,6 +55,15 @@ class Moderator(commands.Cog):
             await context.send('User ' + member.mention + ' has been banned')
             await channel.send(embed=banembed)
 
+    @commands.command()
+    async def setdelay(self, ctx, seconds: int):
+       if ctx.author.guild_permissions.manage_channels
+              await ctx.channel.edit(slowmode_delay=seconds)
+              await ctx.send(f"Set the slowmode delay in this channel to {seconds} seconds!")
+       else:
+              await ctx.send("You dont Have Permission for that!")
+
+
 def setup(client):
     client.add_cog(Moderator(client))
 
