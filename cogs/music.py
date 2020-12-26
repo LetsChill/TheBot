@@ -19,6 +19,7 @@ class Music(commands.Cog):
 
     @commands.command()
     async def play(self, ctx, *, url):
+        await ctx.author.voice.channel.connect()
         player = music.get_player(guild_id=ctx.guild.id)
         if not player:
             player = music.create_player(ctx, ffmpeg_error_betterfix=True)
@@ -46,7 +47,7 @@ class Music(commands.Cog):
     async def stop(self, ctx):
         player = music.get_player(guild_id=ctx.guild.id)
         await player.stop()
-        await ctx.send("Stopped")
+        await ctx.send("Stopped, and deleted all queue.")
 
     @commands.command()
     async def loop(self, ctx):
@@ -76,12 +77,6 @@ class Music(commands.Cog):
             await ctx.send(f"Skipped from **{data[0].name}** to **{data[1].name}**")
         else: 
             await ctx.send(f"Skipped **{data[0].name}**")
-
-    @commands.command()
-    async def volume(self, ctx, vol):
-        player = music.get_player(guild_id=ctx.guild.id)
-        song, volume = await player.change_volume(float(vol / 100)) # volume should be a float between 0 to 1
-        await ctx.send(f"Changed volume for **{song.name}** to **{volume*100}%**")
 
     @commands.command()
     async def remove(self, ctx, index):
