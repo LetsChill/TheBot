@@ -13,6 +13,7 @@ class Music(commands.Cog):
     async def join(self, ctx):
         if ctx.guild.voice_client is None:
              await ctx.author.voice.channel.connect() #Joins author’s voice channel
+             await ctx.send("joined the channel!")
         else:
              await ctx.send("i am already in a voice channel ._.")
 
@@ -21,6 +22,7 @@ class Music(commands.Cog):
     async def leave(self, ctx):
         if ctx.guild.voice_client is not None:
              await ctx.voice_client.disconnect()
+             await ctx.send("left the channel!")
         else:
              await ctx.send("i am not in a voice channel ._.")
 
