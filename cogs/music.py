@@ -24,7 +24,7 @@ class Music(commands.Cog):
 
     @commands.command()
     async def play(self, ctx, *, url):
-        if is_connected:
+        if is_connected(ctx):
             player = music.get_player(guild_id=ctx.guild.id)
             if not player:
                 player = music.create_player(ctx, ffmpeg_error_betterfix=True)
