@@ -11,11 +11,18 @@ class Music(commands.Cog):
     
     @commands.command()
     async def join(self, ctx):
-        await ctx.author.voice.channel.connect() #Joins author’s voice channel
+        if ctx.guild.voice_client is not None:
+             await ctx.author.voice.channel.connect() #Joins author’s voice channel
+        else:
+             await ctx.send("i am already in a voice channel ._.")
+
 
     @commands.command()
     async def leave(self, ctx):
-        await ctx.voice_client.disconnect()
+        if ctx.guild.voice_client is not None:
+             await ctx.voice_client.disconnect()
+        else:
+             await ctx.send("i am not in a voice channel ._.")
 
     @commands.command()
     async def play(self, ctx, *, url):
