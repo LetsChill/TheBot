@@ -13,10 +13,21 @@ from discord.utils import get
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="-", intents=intents, help_command=None)
 
+
+async def status():
+     await await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers")
+     await asyncio.sleep(120)
+     await await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"-help for commands!")
+     await asyncio.sleep(120)
+
+
+
+
+
 @client.event
-async def on_member_join(member):
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , :help"))
-     print(f"Tada! {member.user.name}")
+async def on_ready():
+     bot.loop.create_task(status())
+     print(f"Bot Is Ready!")
                         
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
