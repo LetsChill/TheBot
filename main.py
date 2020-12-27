@@ -14,7 +14,7 @@ intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="-", intents=intents, help_command=None)
 
 
-async def status():
+async def status_change():
      await client.wait_until_ready()
      counter = 0
      while not client.is_closed:
@@ -28,12 +28,12 @@ async def status():
 
 @client.event
 async def on_ready():
-     client.loop.create_task(status())
+     client.loop.create_task(status_change())
+     status_change.start()
      print(f"Bot Is Ready!")
                         
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
        client.load_extension(f'cogs.{filename[:-3]}')
 
-status.start()
 client.run("NzcyODk0NzQxNTgyNzA4Nzc4.X6BUUg.5CXfanDNexURwqbjJwS-sdtWyNc")
