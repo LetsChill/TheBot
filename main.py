@@ -17,7 +17,7 @@ client = commands.AutoShardedBot(command_prefix="-", intents=intents, help_comma
 async def status():
      await client.wait_until_ready()
      counter = 0
-     client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , :help"))
+      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , :help"))
      while not client.is_closed:
         counter += 1
         await asyncio.sleep(100)
