@@ -9,11 +9,6 @@ class Music(commands.Cog):
     def __init__(self, client):
         self.client = client
     
-
-    def is_connected(ctx):
-        voice_client = get(ctx.self.client.voice_clients, guild=ctx.guild)
-        return voice_client and voice_client.is_connected()
-
     @commands.command()
     async def join(self, ctx):
         await ctx.author.voice.channel.connect() #Joins author’s voice channel
@@ -24,7 +19,7 @@ class Music(commands.Cog):
 
     @commands.command()
     async def play(self, ctx, *, url):
-        if is_connected(ctx):
+        if ctx.guild.voice_client is not None:
             player = music.get_player(guild_id=ctx.guild.id)
             if not player:
                 player = music.create_player(ctx, ffmpeg_error_betterfix=True)
