@@ -29,7 +29,6 @@ async def status_change():
 @client.event
 async def on_ready():
      client.loop.create_task(status_change())
-     status_change.run()
      print(f"Bot Is Ready!")
                         
 for filename in os.listdir('./cogs'):
