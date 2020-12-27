@@ -8,6 +8,11 @@ class Music(commands.Cog):
 
     def __init__(self, client):
         self.client = client
+    
+
+    def is_connected(ctx):
+        voice_client = get(ctx.self.client.voice_clients, guild=ctx.guild)
+        return voice_client and voice_client.is_connected()
 
     @commands.command()
     async def join(self, ctx):
@@ -19,17 +24,30 @@ class Music(commands.Cog):
 
     @commands.command()
     async def play(self, ctx, *, url):
-        await ctx.author.voice.channel.connect()
-        player = music.get_player(guild_id=ctx.guild.id)
-        if not player:
-            player = music.create_player(ctx, ffmpeg_error_betterfix=True)
-        if not ctx.voice_client.is_playing():
-            await player.queue(url, search=True)
-            song = await player.play()
-            await ctx.send(f"Playing **{song.name}**")
+        if self.client.is_connected
+            player = music.get_player(guild_id=ctx.guild.id)
+            if not player:
+                player = music.create_player(ctx, ffmpeg_error_betterfix=True)
+            if not ctx.voice_client.is_playing():
+                await player.queue(url, search=True)
+                song = await player.play()
+                await ctx.send(f"Playing **{song.name}**")
+            else:
+                song = await player.queue(url, search=True)
+                await ctx.send(f"Queued **{song.name}**")
         else:
-            song = await player.queue(url, search=True)
-            await ctx.send(f"Queued **{song.name}**")
+            await ctx.author.voice.channel.connect()
+            player = music.get_player(guild_id=ctx.guild.id)
+            if not player:
+                player = music.create_player(ctx, ffmpeg_error_betterfix=True)
+            if not ctx.voice_client.is_playing():
+                await player.queue(url, search=True)
+                song = await player.play()
+                await ctx.send(f"Playing **{song.name}**")
+            else:
+                song = await player.queue(url, search=True)
+                await ctx.send(f"Queued **{song.name}**")
+
 
     @commands.command()
     async def pause(self, ctx):
