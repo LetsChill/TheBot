@@ -29,6 +29,18 @@ class Music(commands.Cog):
              await ctx.send("i am not in a voice channel ._.")
 
     @commands.command()
+        @commands.command()
+    async def dc(self, ctx):
+        if ctx.guild.voice_client is not None:
+             player = music.get_player(guild_id=ctx.guild.id)
+             await player.stop()
+             await ctx.voice_client.disconnect()
+             await ctx.send("left the channel!")
+        else:
+             await ctx.send("i am not in a voice channel ._.")
+
+
+    @commands.command()
     async def play(self, ctx, *, url):
         if ctx.guild.voice_client is not None:
             player = music.get_player(guild_id=ctx.guild.id)
@@ -69,10 +81,9 @@ class Music(commands.Cog):
 
     @commands.command()
     async def stop(self, ctx):
-        player = music.get_player(guild_id=ctx.guild.id)
-        await player.stop()
-        await ctx.voice_client.disconnect()
-        await ctx.send("Stopped, leaved, and deleted all queue.")
+       player = music.get_player(guild_id=ctx.guild.id)
+       song = await player.pause()
+       await ctx.send(f"Paused **{song.name}**")
 
     @commands.command()
     async def loop(self, ctx):
