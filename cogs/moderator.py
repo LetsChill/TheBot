@@ -39,7 +39,7 @@ class Moderator(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(ban_members=True)
-    async def ban(self, context, member: discord.Member, reason=arg3):
+    async def ban(self, context, member: discord.Member):
        if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
             await context.send("you cant ban a mod/admin")
        else:
@@ -49,7 +49,6 @@ class Moderator(commands.Cog):
             )
             banembed.set_author(name="Subary")
             banembed.add_field(name=f'User: ', value=f'{member.name} (ID: {member.id}) ', inline=False)
-            banembed.add_field(name=f'Reason: ', value=f'{reason}', inline=False)
             channel = discord.utils.get(guild.channels, name='mod-logs')
             await member.ban()
     
