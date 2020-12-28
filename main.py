@@ -17,7 +17,7 @@ from discord.utils import get
 
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="&", intents=intents, help_command=None)
-slash = SlashCommand(bot)
+slash = SlashCommand(client)
 
 async def status_change():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , &help"))
