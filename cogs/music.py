@@ -21,6 +21,7 @@ class Music(commands.Cog):
     @commands.command()
     async def leave(self, ctx):
         if ctx.guild.voice_client is not None:
+             player = music.get_player(guild_id=ctx.guild.id)
              await player.stop()
              await ctx.voice_client.disconnect()
              await ctx.send("left the channel!")
