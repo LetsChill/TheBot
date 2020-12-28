@@ -39,7 +39,7 @@ class Info(commands.Cog):
               embhelp=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
-              embhelp.set_author(name="Subary Bot 2.0v, prefix is -")
+              embhelp.set_author(name="Subary Bot 2.0v, prefix is &")
               embhelp.add_field(name="play", value="play [url] or play [search engine]", inline=True)
               embhelp.add_field(name="stop", value="stop the music and makes the bot leaves the channel", inline=True)
               embhelp.add_field(name="pause", value="Stops the bot from playing music", inline=True)
@@ -56,7 +56,7 @@ class Info(commands.Cog):
               embhelp2=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
-              embhelp2.set_author(name="Subary Bot 2.0v, prefix is -")
+              embhelp2.set_author(name="Subary Bot 2.0v, prefix is &")
               embhelp2.add_field(name="setup", value="How to setup logging!", inline=False)
               embhelp2.add_field(name="kick", value="kick [mention] only to people who have kick perms, be sure to put the bot role above members.", inline=True)
               embhelp2.add_field(name="ban", value="ban [mention] only to people who have ban perms, be sure to put the bot role above members.", inline=True)
@@ -69,7 +69,7 @@ class Info(commands.Cog):
               embhelp3=discord.Embed(
               title="Commands availble", description="commands:", color=0x7a219e 
               )
-              embhelp3.set_author(name="Subary Bot 2.0v, prefix is -")
+              embhelp3.set_author(name="Subary Bot 2.0v, prefix is &")
               embhelp3.add_field(name="help music", value="Music commands help!", inline=False)
               embhelp3.add_field(name="help mod", value="Moderation commands help!", inline=False)
               embhelp3.add_field(name="donate", value="How can you donate!", inline=False)
