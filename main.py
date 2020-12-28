@@ -8,7 +8,12 @@ import asyncio
 import random
 
 from discord.ext import commands
+
+from discord_slash import SlashCommand
+from discord_slash import SlashContext
+
 from discord.utils import get
+
 
 intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="&", intents=intents, help_command=None)
@@ -19,6 +24,10 @@ async def status_change():
      await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"&help, helping humans getting perfect!"))
      await asyncio.sleep(100)
 
+@slash.slash(name="test")
+async def Test(ctx: SlashContext):
+    embed = discord.Embed(title="embed test")
+    await ctx.send(content="test", embeds=[embed])
 
 
 
