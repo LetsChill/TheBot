@@ -14,9 +14,9 @@ intents = discord.Intents().all()
 client = commands.AutoShardedBot(command_prefix="&", intents=intents, help_command=None)
 
 async def status_change():
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , -help"))
+     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , &help"))
      await asyncio.sleep(100)
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"-help, helping humans getting perfect!"))
+     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"&help, helping humans getting perfect!"))
      await asyncio.sleep(100)
 
 
