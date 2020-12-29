@@ -21,29 +21,26 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def kick(self, ctx, member: discord.Member):
-        if self.client.user.guild_permussions.kick_members:
-            if ctx.author.guild_permissions.kick_members or ctx.guild_permissions.ban_members:
+       if ctx.author.guild_permissions.kick_members or ctx.guild_permissions.ban_members:
   
-                 if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
-                      await ctx.send("You Cant Kick A Mod/Admin!")
-
-                 else:
-                      guild = ctx.guild
-                      kickembed = discord.Embed(
-                      title='User kicked:', color=0x982abc
-                      )
-                      kickembed.set_author(name="Subary")
-                      kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
-                      channel = discord.utils.get(guild.channels, name='mod-logs')
-                      await member.kick()
-        
-                      await ctx.send('User ' + member.mention + ' has been kicked')
-                      await channel.send(embed=kickembed)
+            if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
+                 await ctx.send("You Cant Kick A Mod/Admin!")
 
             else:
-                 await ctx.send("you Dont Have Permissions To Kick!")
-        else:
-             await ctx.send("i dont have permissions!")
+                 guild = ctx.guild
+                 kickembed = discord.Embed(
+                 title='User kicked:', color=0x982abc
+                 )
+                 kickembed.set_author(name="Subary")
+                 kickembed.add_field(name='User: ', value=f'{member.mention}(ID: {member.id}) ', inline=False)
+                 channel = discord.utils.get(guild.channels, name='mod-logs')
+                 await member.kick()
+        
+                 await ctx.send('User ' + member.mention + ' has been kicked')
+                 await channel.send(embed=kickembed)
+
+       else:
+           await ctx.send("you Dont Have Permissions To Kick!")
 
 
     @commands.command()
