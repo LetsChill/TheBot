@@ -20,14 +20,14 @@ class Moderator(commands.Cog):
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
     @commands.command()
-    async def kick(self, context, member: discord.Member):
-       if context.author.guild_permissions.kick_members or context.guild_permissions.ban_members:
+    async def kick(self, ctx, member: discord.Member):
+       if ctx.author.guild_permissions.kick_members or context.guild_permissions.ban_members:
   
             if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
-                 await context.send("You Cant Kick A Mod/Admin!")
+                 await ctx.send("You Cant Kick A Mod/Admin!")
 
             else:
-                 guild = context.guild
+                 guild = ctx.guild
                  kickembed = discord.Embed(
                  title='User kicked:', color=0x982abc
                  )
@@ -36,23 +36,23 @@ class Moderator(commands.Cog):
                  channel = discord.utils.get(guild.channels, name='mod-logs')
                  await member.kick()
         
-                 await context.send('User ' + member.mention + ' has been kicked')
+                 await ctx.send('User ' + member.mention + ' has been kicked')
                  await channel.send(embed=kickembed)
 
        else:
-            await context.send("you Dont Have Permissions To Kick!")
+            await ctx.send("you Dont Have Permissions To Kick!")
 
     @commands.command()
-    async def ban(self, context, member: discord.Member):
-       if context.author.guild_permissions.kick_members or member.guild_permissions.ban_members:
+    async def ban(self, ctx, member: discord.Member):
+       if ctx.author.guild_permissions.kick_members or ctx.author.guild_permissions.ban_members:
 
             if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
-                 await context.send("You Cant Ban A Mod/Admin!")
+                 await ctx.send("You Cant Ban A Mod/Admin!")
 
            
 
             else:
-                 guild = context.guild
+                 guild = ctx.guild
                  banembed = discord.Embed(
                  title='User banned:', color=0x982abc
                  )
@@ -61,7 +61,7 @@ class Moderator(commands.Cog):
                  channel = discord.utils.get(guild.channels, name='mod-logs')
                  await member.ban()
     
-                 await context.send('User ' + member.mention + ' has been banned')
+                 await ctx.send('User ' + member.mention + ' has been banned')
                  await channel.send(embed=banembed)
 
        else:
@@ -69,16 +69,16 @@ class Moderator(commands.Cog):
 
 
     @commands.command()
-    async def softban(self, context, member: discord.Member):
-       if context.author.guild_permissions.kick_members or member.guild_permissions.ban_members:
+    async def softban(self, ctx, member: discord.Member):
+       if ctx.author.guild_permissions.kick_members or member.guild_permissions.ban_members:
 
             if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
-                 await context.send("you cant soft ban a mod/admin")
+                 await ctx.send("you cant soft ban a mod/admin")
 
      
 
             else:
-                 guild = context.guild
+                 guild = ctx.guild
                  banembed = discord.Embed(
                  title='User soft banned:', color=0x982abc
                  )
@@ -88,11 +88,11 @@ class Moderator(commands.Cog):
                  await member.ban()
                  await member.unban()
     
-                 await context.send('User ' + member.mention + ' has been soft banned')
+                 await ctx.send('User ' + member.mention + ' has been soft banned')
                  await channel.send(embed=banembed)
 
        else:
-            await context.send("You Cant SoftBan A Mod/Admin!")
+            await ctx.send("You Cant SoftBan A Mod/Admin!")
 
 
 
