@@ -21,7 +21,7 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def kick(self, ctx, member: discord.Member):
-        if client.user.guild_permussions.kick_members:
+        if self.client.user.guild_permussions.kick_members:
             if ctx.author.guild_permissions.kick_members or ctx.guild_permissions.ban_members:
   
                  if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
