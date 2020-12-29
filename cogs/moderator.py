@@ -22,6 +22,8 @@ class Moderator(commands.Cog):
     @commands.command()
     async def kick(self, ctx, member: discord.Member):
        if ctx.author.guild_permissions.kick_members or ctx.guild_permissions.ban_members:
+
+         try:
   
             if member.guild_permissions.kick_members or member.guild_permissions.ban_members:
                  await ctx.send("You Cant Kick A Mod/Admin!")
@@ -41,6 +43,11 @@ class Moderator(commands.Cog):
 
        else:
            await ctx.send("you Dont Have Permissions To Kick!")
+
+         except commands.MissingPermissions:
+           await ctx.send("I Dont Have Perms!")
+             return
+
 
 
     @commands.command()
