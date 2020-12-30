@@ -44,9 +44,9 @@ class Logging(commands.Cog):
         embdel = discord.Embed(
         title='User Message deleted', color=0x982abc
         )
-        embdel.set_author(name='Subaru')
-        embdel.add_field(name=f'User:', value=f'{message.author.mention}'.)
-        embdel.add_field(name='message deleted', value=f"{message.content}.)
+        embdel.set_author(name='Subary Logging')
+        embdel.add_field(name=f'User:', value=f"{message.author.mention}".)
+        embdel.add_field(name='message deleted', value=f"{message.content}".)
         channel = discord.utils.get(guild.channels, name='message-logs')
         await channel.send(embed=embdel)
 
@@ -59,7 +59,7 @@ class Logging(commands.Cog):
         embmsg = discord.Embed(
         title='User joined:', color=0x982abc
         )
-        embmsg.set_author(name="Subaru")
+        embmsg.set_author(name="Subary Logging")
         embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
         channel = discord.utils.get(guild.channels, name='member-logs')
         await channel.send(embed=embmsg)
@@ -73,7 +73,7 @@ class Logging(commands.Cog):
         embmsg1 = discord.Embed(
         title='User left:', color=0x982abc
         )
-        embmsg1.set_author(name="Subaru")
+        embmsg1.set_author(name="Subary Logging")
         embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
         channel = discord.utils.get(guild.channels, name='member-logs')
         await channel.send(embed=embmsg1)
