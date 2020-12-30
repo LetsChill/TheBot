@@ -47,7 +47,7 @@ class Moderator(commands.Cog):
         channel.send(embed=banembed)
         ctx.send(f"{member.name} was kicked!")
        
-      except discord.errors.forbidden:
+      except discord.errors.CommandInvokeError:
         await ctx.send("I Dont Have Permissions To Kick!")
         return
 
