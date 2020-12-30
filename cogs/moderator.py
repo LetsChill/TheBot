@@ -134,7 +134,7 @@ class Moderator(commands.Cog):
     async def kick_error(self, ctx, error):
       await ctx.send("There was an error")
       if isinstance(error, command.Forbidden):
-          await ctx.send("MIssing Required Argument")
+          await ctx.send("I Dont Have Permissions To Kick.")
       else:
           raise error
 
