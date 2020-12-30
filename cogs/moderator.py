@@ -46,8 +46,8 @@ class Moderator(commands.Cog):
         banembed.set_author(name="Subary")
         banembed.add_field(name=f'User: ', value=f'{member.name}\n\n (ID: {member.id}) ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
-        channel.send(embed=banembed)
-        ctx.send(f"{member.name} was kicked!")
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was kicked!")
 
       except discord.Forbidden:
         await ctx.send(f"I don't have permissions to kick")
@@ -63,8 +63,8 @@ class Moderator(commands.Cog):
         banembed.set_author(name="Subary")
         banembed.add_field(name=f'User: ', value=f'{member.name} (ID: {member.id}) ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
-        channel.send(embed=banembed)
-        ctx.send(f"{member.name} was kicked But Couldn't dm them")
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was kicked But Couldn't dm them")
 
     @commands.command()
     async def ban(self, ctx, member: discord.Member, *, arg):
@@ -95,8 +95,8 @@ class Moderator(commands.Cog):
         banembed.set_author(name="Subary")
         banembed.add_field(name=f'User: ', value=f'{member.name}\n\n (ID: {member.id}) ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
-        channel.send(embed=banembed)
-        ctx.send(f"{member.name} was kicked!")
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was kicked!")
 
 
       except:
@@ -108,8 +108,8 @@ class Moderator(commands.Cog):
         banembed.set_author(name="Subary")
         banembed.add_field(name=f'User: ', value=f'{member.name}\n\n (ID: {member.id}) ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
-        channel.send(embed=banembed)
-        ctx.send(f"{member.name} was kicked But Couldn't dm them")
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was kicked But Couldn't dm them")
 
 
     @commands.command()
