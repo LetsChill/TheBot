@@ -15,11 +15,11 @@ class Logging(commands.Cog):
 
     @commands.command()
     async def setup(self, ctx):
-        await ctx.send("To setup the logging system, create 3 channels with the names: **member-logs**, **message-logs** and **mod-logs**")
+        await ctx.send(f"To setup the logging system, create 3 channels with the names:\n\n **member-logs**\n\n **message-logs** \n\n**mod-logs**")
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send(f"Pong!🏓 Bot Latency was {round(self.client.latency * 1000)}ms")
+        await ctx.send(f"Pong!🏓 My Latency Was \n**{round(self.client.latency * 1000)}ms**!")
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
@@ -42,15 +42,17 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
-        guild = message.guild
-        embdel = discord.Embed(
-        title='User Message deleted', color=0x982abc
-        )
-        embdel.set_author(name='Subary Logging')
-        embdel.add_field(name=f'User:', value=f"{message.author.mention}.")
-        embdel.add_field(name='message deleted', value=f"{message.content}.")
-        channel = discord.utils.get(guild.channels, name='message-logs')
-        await channel.send(embed=embdel)
+      if message.author == self.client.user:
+        return
+      guild = message.guild
+      embdel = discord.Embed(
+      title='User Message deleted', color=0x982abc
+      )
+      embdel.set_author(name='Subary Logging')
+      embdel.add_field(name=f'User:', value=f"{message.author.mention}.")
+      embdel.add_field(name='message deleted', value=f"{message.content}.")
+      channel = discord.utils.get(guild.channels, name='message-logs')
+      await channel.send(embed=embdel)
 
 
 
