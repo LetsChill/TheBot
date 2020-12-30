@@ -63,16 +63,16 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def ban(self, ctx, member: discord.Member):
-        if not member:
-        await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
+      if not member:
+        await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nban <ID>/<mention> [Reason]")
         return
       
       if member == ctx.author:
-        await ctx.send("You Can't Kick Your Self...")
+        await ctx.send("You Can't ban Your Self...")
         return
 
       if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
-        await ctx.send("You Can't Kick A Moderator!")
+        await ctx.send("You Can't ban A Moderator!")
         return
 
       try:
