@@ -4,6 +4,8 @@ from discord.ext import commands
 
 from discord.utils import get
 
+import discord.ext.commands
+
 class Moderator(commands.Cog):
 
     def __init__(self, client):
@@ -133,7 +135,7 @@ class Moderator(commands.Cog):
     @kick.error
     async def kick_error(self, ctx, error):
       await ctx.send("There was an error")
-      if isinstance(error, command.MissingPermissions):
+      if isinstance(error, MissingPermissions):
           await ctx.send("I Dont Have Permissions To Kick.")
       else:
           raise error
