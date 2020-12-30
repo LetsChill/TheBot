@@ -46,11 +46,6 @@ class Moderator(commands.Cog):
         channel = discord.utils.get(guild.channels, name='mod-logs')
         channel.send(embed=banembed)
         ctx.send(f"{member.name} was kicked!")
-       
-      @kick.error
-      async def kick_error(error, ctx):
-          if isinstance(error, MissingPermissions):
-            ctx.send("I Dont Have Permission To Kick!")
 
       except:
         await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason}")
@@ -132,6 +127,20 @@ class Moderator(commands.Cog):
               await channel.send(embed=Delemb)
        else:
               await ctx.send("You dont Have Permission for that!")
+
+#error_Handling-----
+
+    @kick.error
+    async def kick_error(self, ctx, error):
+      await ctx.send("There was an error")
+      if isinstance(error, command.Forbidden):
+          await ctx.send("MIssing Required Argument")
+      else:
+          raise error
+
+
+
+
 
 
 def setup(client):
