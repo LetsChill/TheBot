@@ -22,7 +22,7 @@ class Moderator(commands.Cog):
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
     @commands.command()
-    async def kick(self, ctx,member: discord.Member=None, *, arg):
+    async def kick(self, ctx, member: discord.Member=None, *, arg):
       if not member:
         await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
         return
@@ -36,8 +36,8 @@ class Moderator(commands.Cog):
         return
 
       try:
-        await member.send(f"You Were Kicked From **{ctx.guild.name}** \n\nReason: **{reason==arg}**")
-        await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason==arg}")
+        await member.send(f"You Were Kicked From **{ctx.guild.name}** \n\nReason: **{arg}**")
+        await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {arg}")
  
         guild = ctx.guild
         banembed = discord.Embed(
@@ -50,12 +50,12 @@ class Moderator(commands.Cog):
         ctx.send(f"{member.name} was kicked!")
 
       except discord.Forbidden: # the error being raised
-        await ctx.send(f"I don't have permission to ban **{member.display.name}**")
+        await ctx.send(f"I don't have permission to kick **{member.display.name}**")
 
 
 
       except:
-        await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason==arg}")
+        await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {arg}")
         guild = ctx.guild
         banembed = discord.Embed(
         title='User banned:', color=0x982abc
