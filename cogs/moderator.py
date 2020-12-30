@@ -44,7 +44,7 @@ class Moderator(commands.Cog):
         title='User banned:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'{member.name}\n\n (ID: {member.id}) ', inline=False)
+        banembed.add_field(name=f'User: ', value=f'**{member.name}**\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n**{arg}** ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked!")
@@ -61,7 +61,7 @@ class Moderator(commands.Cog):
         title='User banned:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'{member.name} (ID: {member.id}) ', inline=False)
+        banembed.add_field(name=f'User: ', value=f'', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked But Couldn't dm them")
@@ -93,7 +93,7 @@ class Moderator(commands.Cog):
         title='User banned:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'{member.name}\n\n (ID: {member.id}) ', inline=False)
+        banembed.add_field(name=f'User: ', value=f'**{member.name}**\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n**{arg}**', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked!")
