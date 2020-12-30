@@ -151,7 +151,7 @@ class Moderator(commands.Cog):
 
     @kick.error
     async def kick_error(self, ctx, error):
-      if isinstance(error, commands.CommandInvokeError):
+      if isinstance(error, errors.Forbidden):
           await ctx.send("I Dont Have Permissions To Kick.")
       else:
           raise error
