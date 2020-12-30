@@ -30,9 +30,9 @@ class Logging(commands.Cog):
       description = "message was edited", color=0x982abc
       ) 
       embed.set_author(name=f"Subaru Logging")
-      embed.add_field(name=f'User: ', value=f'{before.author.mention}\n', inline=False)
-      embed.add_field(name='Original:', value=f"{before.content}\n", inline=False)
-      embed.add_field(name="Edited:", value=f"{after.content}", inline=False)
+      embed.add_field(name=f'User: ', value=f'{before.author.mention}.\n', inline=False)
+      embed.add_field(name='Original:', value=f"{before.content}.\n", inline=False)
+      embed.add_field(name="Edited:", value=f"{after.content}.", inline=False)
       channel = discord.utils.get(guild.channels, name='message-logs')
       await channel.send(embed=embed)
 
