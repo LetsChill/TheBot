@@ -45,8 +45,8 @@ class Logging(commands.Cog):
         title='User Message deleted', color=0x982abc
         )
         embdel.set_author(name='Subaru')
-        embdel.add_field(name=f'User:', value=f'{message.author.mention}')
-        embdel.add_field(name='message deleted', value=message.content)
+        embdel.add_field(name=f'User:', value=f'{message.author.mention}'.)
+        embdel.add_field(name='message deleted', value=f"{message.content}.)
         channel = discord.utils.get(guild.channels, name='message-logs')
         await channel.send(embed=embdel)
 
