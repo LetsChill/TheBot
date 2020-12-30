@@ -22,7 +22,7 @@ class Moderator(commands.Cog):
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
     @commands.command()
-    async def kick(self, ctx, arg, member: discord.Member=None, *):
+    async def kick(self, ctx,member: discord.Member=None, arg, *):
       if not member:
         await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
         return
