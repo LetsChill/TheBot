@@ -62,7 +62,7 @@ class Logging(commands.Cog):
         title='User joined:', color=0x982abc
         )
         embmsg.set_author(name="Subary Logging")
-        embmsg.add_field(name='User: ', value=f"{member.mention}(ID: {member.id}) account age: {member.created_at}", inline=False)
+        embmsg.add_field(name='User: ', value=f"{member.mention}\n\nMember ID:\n{member.id}\n account age: \n{member.created_at}", inline=False)
         channel = discord.utils.get(guild.channels, name='member-logs')
         await channel.send(embed=embmsg)
 
@@ -76,7 +76,7 @@ class Logging(commands.Cog):
         title='User left:', color=0x982abc
         )
         embmsg1.set_author(name="Subary Logging")
-        embmsg1.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id})', inline=False)
+        embmsg1.add_field(name=f'User: ', value=f'{member.mention}\n member ID: \n{member.id})', inline=False)
         channel = discord.utils.get(guild.channels, name='member-logs')
         await channel.send(embed=embmsg1)
 
