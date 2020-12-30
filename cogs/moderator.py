@@ -22,7 +22,7 @@ class Moderator(commands.Cog):
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
     @commands.command()
-    async def kick(self, ctx, arg2: str = None, member: discord.Member=None, *, reason=None):
+    async def kick(self, ctx, arg, member: discord.Member=None, *):
       if not member:
         await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
         return
@@ -36,7 +36,7 @@ class Moderator(commands.Cog):
         return
 
       try:
-        reason == arg2
+        reason == arg
         await member.send(f"You Were Kicked From **{ctx.guild.name}** \n\nReason: **{reason}**")
         await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason}")
  
@@ -51,7 +51,7 @@ class Moderator(commands.Cog):
         ctx.send(f"{member.name} was kicked!")
 
       except:
-        reason == arg2
+        reason == arg
         await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason}")
         guild = ctx.guild
         banembed = discord.Embed(
