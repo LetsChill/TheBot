@@ -23,6 +23,10 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def kick(self, ctx,member: discord.Member=None, *, arg):
+      if not arg:
+        arg == "Not Provided"
+
+
       if not member:
         await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
         return
@@ -49,6 +53,11 @@ class Moderator(commands.Cog):
         channel = discord.utils.get(guild.channels, name='mod-logs')
         channel.send(embed=banembed)
         ctx.send(f"{member.name} was kicked!")
+
+      except discord.Forbidden: # the error being raised
+        await ctx.send(f"I don't have permission to ban **{member}**")
+
+
 
       except:
         reason == arg
@@ -146,20 +155,6 @@ class Moderator(commands.Cog):
               await channel.send(embed=Delemb)
        else:
               await ctx.send("You dont Have Permission for that!")
-
-#error_Handling-----
-
-    @kick.error
-    async def kick_error(self, ctx, error):
-      if isinstance(error, errors.Forbidden):
-          await ctx.send("I Dont Have Permissions To Kick.")
-      else:
-          raise error
-
-
-
-
-
 
 def setup(client):
     client.add_cog(Moderator(client))
