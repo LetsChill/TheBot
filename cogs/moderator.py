@@ -47,8 +47,10 @@ class Moderator(commands.Cog):
         channel.send(embed=banembed)
         ctx.send(f"{member.name} was kicked!")
        
-      if isinstance(error, MissingPermissions):
-        ctx.send("I Dont Have Permissions To Kick!")
+      @kick.error
+      async def kick_error(error, ctx):
+          if isinstance(error, MissingPermissions):
+            ctx.send("I Dont Have Permission To Kick!")
 
       except:
         await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {reason}")
