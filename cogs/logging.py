@@ -23,7 +23,7 @@ class Logging(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
-      if before.author == client.user:
+      if before.author == self.client.user:
         return
       guild = before.guild
       embed = discord.Embed(
