@@ -25,7 +25,7 @@ class Logging(commands.Cog):
     async def on_message_edit(self, before, after):
         if before.author == client.user
           pass
-        else:
+
           guild = before.guild
           embed = discord.Embed(
            
