@@ -114,7 +114,7 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def softban(self, ctx, member: discord.Member):
-       if not member:
+      if not member:
         await ctx.send("you have to mention someone.\n\nsoftban <mention> [Reason]")
         return
       
