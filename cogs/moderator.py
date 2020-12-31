@@ -114,30 +114,50 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def softban(self, ctx, member: discord.Member):
-       if ctx.author.guild_permissions.kick_members or member.guild_permissions.ban_members:
+       if not member:
+        await ctx.send("you have to mention someone.\n\nsoftban <mention> [Reason]")
+        return
+      
+      if member == ctx.author:
+        await ctx.send("You Can't softban Your Self...")
+        return
 
-            if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
-                 await ctx.send("you cant soft ban a mod/admin")
+      if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
+        await ctx.send("You Can't Kick A Moderator!")
+        return
 
-     
+      try:
+        await member.send(f"You Were softbanned From **{ctx.guild.name}** \n\nReason: **{arg}**")
+        await member.ban(reason=f"Moderator: {ctx.author.name}\n\nReason: {arg}")
+        await member.unban(reason="Soft ban Unbanning")
+ 
+        guild = ctx.guild
+        banembed = discord.Embed(
+        title='User Softbanned:', color=0x982abc
+        )
+        banembed.set_author(name="Subary")
+        banembed.add_field(name=f'User: ', value=f'{member.name}\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n{arg} ', inline=False)
+        channel = discord.utils.get(guild.channels, name='mod-logs')
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was kicked!")
 
-            else:
-                 guild = ctx.guild
-                 banembed = discord.Embed(
-                 title='User soft banned:', color=0x982abc
-                 )
-                 banembed.set_author(name="Subary")
-                 banembed.add_field(name=f'User: ', value=f'{member.mention} (ID: {member.id}) ', inline=False)
-                 channel = discord.utils.get(guild.channels, name='mod-logs')
-                 await member.ban()
-                 await member.unban()
-    
-                 await ctx.send(f'User {member.display.name} has been soft banned')
-                 await channel.send(embed=banembed)
+      except discord.Forbidden:
+        await ctx.send(f"I don't have permissions to ban")
 
-       else:
-            await ctx.send("You Cant SoftBan A Mod/Admin!")
 
+
+      except:
+        await member.ban(reason=f"Moderator: {ctx.author.name}\n\nReason: {arg}")
+        await member.unban(reason="Soft ban Unbanning")
+        guild = ctx.guild
+        banembed = discord.Embed(
+        title='User softbanned:', color=0x982abc
+        )
+        banembed.set_author(name="Subary")
+        banembed.add_field(name=f'User: ', value=f'{member.display.name}', inline=False)
+        channel = discord.utils.get(guild.channels, name='mod-logs')
+        await channel.send(embed=banembed)
+        await ctx.send(f"{member.name} was softbanned But Couldn't dm them")
 
 
     @commands.command()
