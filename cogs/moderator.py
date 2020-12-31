@@ -167,17 +167,17 @@ class Moderator(commands.Cog):
        
        try:
            if ctx.author.guild_permissions.kick_members:
-                  guild = ctx.guild
-                   Delemb = discord.Embed(
-                   title='Channel delay set:', color=0x982abc
-                   )
-                   Delemb.add_field(name=f'Moderator: {ctx.author.mention} ', value=f"Delay set To {seconds} seconds", inline=False)
-                   channel = discord.utils.get(guild.channels, name='mod-logs')
-                   await ctx.channel.edit(slowmode_delay=seconds)
-                   await ctx.send(f"Set the slowmode delay in this channel to {seconds} seconds!")
-                   await channel.send(embed=Delemb)
-              else:
-                   await ctx.send("You dont Have Permission for that!")
+             guild = ctx.guild
+             Delemb = discord.Embed(
+             title='Channel delay set:', color=0x982abc
+             )
+             Delemb.add_field(name=f'Moderator: {ctx.author.mention} ', value=f"Delay set To {seconds} seconds", inline=False)
+             channel = discord.utils.get(guild.channels, name='mod-logs')
+             await ctx.channel.edit(slowmode_delay=seconds)
+             await ctx.send(f"Set the slowmode delay in this channel to {seconds} seconds!")
+             await channel.send(embed=Delemb)
+           else:
+             await ctx.send("You dont Have Permission for that!")
 
        except discord.Forbidden:
          ctx.send("i dont Have manage_channels permissions!")
