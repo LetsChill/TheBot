@@ -12,9 +12,9 @@ class Moderator(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def clear(self, ctx, amount):      
+    async def clear(self, ctx, amount=1):      
       if ctx.author.guild_permissions.manage_messages is None:   
-        ctx.send("you don't have permissions!")
+        await ctx.send("you don't have permissions!")
         return
 
       try:
