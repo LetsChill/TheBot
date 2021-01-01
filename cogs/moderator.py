@@ -12,12 +12,12 @@ class Moderator(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def clear(self, ctx, amount=1):
+    async def clear(self, ctx, arg=None):
          if ctx.author.guild_permissions.manage_messages:
           
               await ctx.channel.purge(limit=1)
-              await ctx.channel.purge(limit=amount)
-              await ctx.channel.send(f"purged {amount} messages", delete_after=4)
+              await ctx.channel.purge(limit=arg)
+              await ctx.channel.send(f"purged {arg} messages", delete_after=4)
          else:
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
@@ -67,7 +67,7 @@ class Moderator(commands.Cog):
         await ctx.send(f"{member.name} was kicked But Couldn't dm them")
 
     @commands.command()
-    async def ban(self, ctx, member: discord.Member, *, arg):
+    async def ban(self, ctx, member: discord.Member, *, arg="Not Provided"):
 
       if not member:
         await ctx.send("you have to mention someone.\n\nban <mention> [Reason]")
@@ -113,7 +113,7 @@ class Moderator(commands.Cog):
 
 
     @commands.command()
-    async def softban(self, ctx, member: discord.Member):
+    async def softban(self, ctx, member: discord.Member, *, arg="Not Provided"):
       if not member:
         await ctx.send("you have to mention someone.\n\nsoftban <mention> [Reason]")
         return
