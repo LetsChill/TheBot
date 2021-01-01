@@ -22,9 +22,9 @@ class Moderator(commands.Cog):
               await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
 
     @commands.command()
-    async def kick(self, ctx, member: discord.Member=None, *, arg):
+    async def kick(self, ctx, member: discord.Member=None, *, arg == None):
       if not member:
-        await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nkick <ID>/<mention> [Reason]")
+        await ctx.send("you have to mention someone,\nkick <mention> [Reason]")
         return
       
       if member == ctx.author:
@@ -44,7 +44,7 @@ class Moderator(commands.Cog):
         title='User banned:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'**{member.name}**\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n**{arg}** ', inline=False)
+        banembed.add_field(name=f'User: ', value=f'{member.name}\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n{arg} ', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked!")
@@ -58,10 +58,10 @@ class Moderator(commands.Cog):
         await member.kick(reason=f"Moderator: {ctx.author.name}\n\nReason: {arg}")
         guild = ctx.guild
         banembed = discord.Embed(
-        title='User banned:', color=0x982abc
+        title='User kicked:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'', inline=False)
+        banembed.add_field(name=f'User: ', value=f"{member.name}\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n{arg} ", inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked But Couldn't dm them")
@@ -70,7 +70,7 @@ class Moderator(commands.Cog):
     async def ban(self, ctx, member: discord.Member, *, arg):
 
       if not member:
-        await ctx.send("you have to mention someone, or give there <ID> if they left!.\n\nban <ID>/<mention> [Reason]")
+        await ctx.send("you have to mention someone.\n\nban <mention> [Reason]")
         return
    
    
@@ -93,7 +93,7 @@ class Moderator(commands.Cog):
         title='User banned:', color=0x982abc
         )
         banembed.set_author(name="Subary")
-        banembed.add_field(name=f'User: ', value=f'**{member.name}**\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n**{arg}**', inline=False)
+        banembed.add_field(name=f'User: ', value=f'{member.name}\n(ID: {member.id})\nModerator: {ctx.author.mention}\nReason:\n{arg}', inline=False)
         channel = discord.utils.get(guild.channels, name='mod-logs')
         await channel.send(embed=banembed)
         await ctx.send(f"{member.name} was kicked!")
@@ -123,7 +123,7 @@ class Moderator(commands.Cog):
         return
 
       if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
-        await ctx.send("You Can't Kick A Moderator!")
+        await ctx.send("You Can't SoftBan A Moderator!")
         return
 
       try:
