@@ -13,6 +13,9 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def clear(self, ctx, arg=None):
+         if arg == None:
+           ctx.send("you have to spesify how much number of messages you want to purge!")
+           return
          if ctx.author.guild_permissions.manage_messages:
           
               await ctx.channel.purge(limit=1)
