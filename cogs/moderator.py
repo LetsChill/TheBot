@@ -22,7 +22,7 @@ class Moderator(commands.Cog):
         await ctx.channel.purge(limit=amount)
         await ctx.channel.send(f"purged {amount} messages", delete_after=4)
         
-      except discord.Forbidden
+      except discord.Forbidden:
         await ctx.send("I Dont Have manage_messages permission!")
 
 
@@ -191,8 +191,8 @@ class Moderator(commands.Cog):
 
 
 #Error Handlers!!!
-    @kick.error
-    async def kick_handler(self, ctx, error):
+    @clear.error
+    async def clear_handler(self, ctx, error):
       if isinstance(error, commands.MissingRequiredArgument):
             if error.param.name == 'amount':
                 await ctx.send("You Have to spesify The number of messages you want to clear!")
