@@ -13,7 +13,9 @@ class Moderator(commands.Cog):
 
     @commands.command()
     async def clear(self, ctx, amount):      
-      if ctx.author.guild_permissions.manage_messages:   
+      if ctx.author.guild_permissions.manage_messages is None:   
+        ctx.send("you don't have permissions!")
+        return
 
       try:
         await ctx.channel.purge(limit=1)
@@ -82,7 +84,7 @@ class Moderator(commands.Cog):
         return
 
 
-      if member.guild_permissions.ban_members or member.guild_permissions.kick_members:
+      if member.guild_permissions.ban_members:
         await ctx.send("You Can't ban A Moderator!")
         return
 
