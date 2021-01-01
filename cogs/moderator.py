@@ -12,17 +12,17 @@ class Moderator(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def clear(self, ctx, amount):
-         if amount == None:
-           await ctx.send("you have to spesify how much number of messages you want to purge!")
-           return
-         if ctx.author.guild_permissions.manage_messages:
-          
-              await ctx.channel.purge(limit=1)
-              await ctx.channel.purge(limit=amount)
-              await ctx.channel.send(f"purged {amount} messages", delete_after=4)
-         else:
-              await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
+    async def clear(self, ctx, amount):      
+      if ctx.author.guild_permissions.manage_messages:   
+        await ctx.channel.purge(limit=1)
+        await ctx.channel.purge(limit=amount)
+        await ctx.channel.send(f"purged {amount} messages", delete_after=4)
+      else:
+        await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
+  
+      except discord.MissingRequiredArgument:
+        await ctx.send("you have to spesify a number to clear!")
+
 
     @commands.command()
     async def kick(self, ctx, member: discord.Member=None, *, arg="Not Provided"):
