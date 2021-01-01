@@ -14,12 +14,12 @@ class Moderator(commands.Cog):
     @commands.command()
     async def clear(self, ctx, amount):      
       if ctx.author.guild_permissions.manage_messages:   
+
+      try:
         await ctx.channel.purge(limit=1)
         await ctx.channel.purge(limit=amount)
         await ctx.channel.send(f"purged {amount} messages", delete_after=4)
-      else:
-        await ctx.channel.send("you dont have permissions to do so!", delete_after=4)
-  
+        
       except discord.MissingRequiredArgument:
         await ctx.send("you have to spesify a number to clear!")
 
