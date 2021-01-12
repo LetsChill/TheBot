@@ -1,44 +1,13 @@
+#might make a tut on how to add commands
 import discord
-import requests
-import random
-
-import os
-import datetime
-import asyncio
-import random
-
 from discord.ext import commands
 
-from discord_slash import SlashCommand
-from discord_slash import SlashContext
-
-from discord.utils import get
-
-
-intents = discord.Intents().all()
-client = commands.AutoShardedBot(command_prefix="&", intents=intents, help_command=None)
-slash = SlashCommand(client)
-
-async def status_change():
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Humans on {len(client.guilds)} Servers , &help"))
-     await asyncio.sleep(100)
-     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"&help, helping humans getting perfect!"))
-     await asyncio.sleep(100)
-
-@slash.slash(name="test")
-async def Test(ctx: SlashContext):
-    embed = discord.Embed(title="embed test")
-    await ctx.send(content="test", embeds=[embed])
-
-
+token = "mfa.-G0rObP9WoC20lg2b2qPh9y-THR3oooEpmzwCgHprDKaH_inpm2TEYOi7auHUmiWzmKpwRPB1omrx6pZ_5d7"
+client = commands.Bot("$$$", self_bot = True)
 
 @client.event
 async def on_ready():
-     client.loop.create_task(status_change())
-     print(f"Bot Is Ready!")
-                        
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-       client.load_extension(f'cogs.{filename[:-3]}')
+        await bot.change_presence(activity=discord.Streaming(name="Face Reveal!!", url="https://youtu.be/HP362ccZBmY"))
+	print("Bot is ready!!")
 
-client.run("NzcyODk0NzQxNTgyNzA4Nzc4.X6BUUg.B4J8MjpqiYnvsNqKVu9g4Bosdag")
+client.run(token, bot=False)
