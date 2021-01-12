@@ -7,7 +7,6 @@ client = commands.Bot("$$$", self_bot = True)
 
 @client.event
 async def on_ready():
-        await bot.change_presence(activity=discord.Streaming(name="Face Reveal!!", url="https://youtu.be/HP362ccZBmY"))
-	print("Bot is ready!!")
+    await bot.change_presence(activity=discord.Streaming(name="Just Chilling", url="https://youtu.be/HP362ccZBmY")
 
 client.run(token, bot=False)
