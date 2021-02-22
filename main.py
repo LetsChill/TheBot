@@ -2,12 +2,8 @@
 import discord
 from discord.ext import commands
 
-TOKEN = "mfa.-G0rObP9WoC20lg2b2qPh9y-THR3oooEpmzwCgHprDKaH_inpm2TEYOi7auHUmiWzmKpwRPB1omrx6pZ_5d7"
+TOKEN = "TOKEN"
 
-client = discord.Client(self_bot = True)
+client = discord.Client()
 
-@client.event
-async def on_ready():
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Kimi No Na Wa | Your name | Half way there"))
-
-client.run(TOKEN, bot=False)
+client.run(TOKEN)
